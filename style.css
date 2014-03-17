@@ -1,0 +1,18 @@
+/*
+Theme Name:     Soils Extension
+Theme URI:      http://cals.wisc.edu/developers
+Description:    Child theme for the CALS WP Theme
+Author:         Al Nemec
+Author URI:     http://www.wisc.edu/directories/person.php?name=ALBERT%20M%20NEMEC
+Template:       calsmain2013
+Version:        0.1.0
+*/
+
+@import url("../calsmain2013/style.css");
+@import url("../calsmain2013/mobile.css");
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
+    left: 120px;
+    position: relative;
+    top: 10px;
+}
