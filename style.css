@@ -10,9 +10,17 @@ Version:        0.1.0
 
 @import url("../calsmain2013/style.css");
 @import url("../calsmain2013/mobile.css");
+@import url("master-child.css");
 
-html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
+/*html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
     left: 120px;
     position: relative;
     top: 10px;
+} */
+
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
+    position: absolute;
+    right: -60px;
+    top: -28px;
 }
