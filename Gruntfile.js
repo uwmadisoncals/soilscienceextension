@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       build: {
-        src: ['js/jquery-1.7.1.min.js','js/jquery.ui.js','js/jquery.iosslider.js','js/jquery.isotope.min.js','js/jquery-css-transform.js','js/jquery-rotate.js','js/browserdetect.js','js/mainactions.js','js/min/gsapi.min.js','js/blurobjs.js','library/scripts/vallenato.js'],
+        src: ['js/jquery-1.7.1.min.js','js/jquery.ui.js','js/jquery.iosslider.js','js/jquery.isotope.min.js','js/jquery-css-transform.js','js/jquery-rotate.js','js/browserdetect.js','js/mainactions.js','js/min/gsapi.min.js','js/blurobjs.js','library/scripts/vallenato.js','js/soilsextension_custom.js'],
         dest: 'js/min/master.min.js'
       }
     },
@@ -30,13 +30,13 @@ module.exports = function(grunt) {
     },
   },
   watch: {
-	 /* scripts: {
+	  scripts: {
 	    files: ['js/*.js'],
 	    tasks: ['uglify'],
 	    options: {
 	      livereload: true,
 	    },
-	  },*/
+	  },
 	  css: {
 	    files: '**/*.scss',
 	    tasks: ['sass','concat'],

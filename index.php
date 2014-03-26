@@ -133,7 +133,7 @@ echo '<li><a href="#" data-cat="'.$cat->slug.'" class="selected categor">'.$cat-
 	  		<a href="#" class="remembersettings selected" data-rem="yes">Remember My Settings</a>
 
   		</div>
-    </div>  */ ?>
+    </div>
    		<?php	if ( is_home() ) { query_posts( 'showposts=1' ); } ?>
 
 			<?php if ( have_posts() ) : ?>
