@@ -30,3 +30,11 @@ html.csstransforms body#calsblack.page div.mobileScroll div#page.hfeed header#br
     right: -60px;
     top: -28px;
 }
+
+div.newsItem .text {
+	position: relative;
+	}
+
+div#container.super-list div.newsItem div.previousa div.text div.excerpt{
+	display:inline;
+}

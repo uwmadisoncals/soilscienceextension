@@ -23,8 +23,53 @@ get_header(); ?>
   <div id="main">
 
 		<div id="primary">
-			
-			
+			<!-- Will be removed -->
+			<div class="newsItem customize" style="display:none;">
+			<span class="number">1</span>
+			<div class="hiddendate">-9999999999</div>
+    	<div class="categories">
+	  		<div class="topics">
+		  		<ul>
+		  			
+
+	    	<?php
+$categories = get_categories();
+foreach ($categories as $cat) {
+
+if($cat->cat_name != 'Uncategorized') {
+echo '<li><a href="#" data-cat="'.$cat->slug.'" class="selected categor">'.$cat->cat_name.'</a></li>';
+}
+
+}
+?>
+					<!--<li><a href="#" data-cat="Agriculture" class="selected agriculture categor"><span></span>Agriculture</a><a href="http://news.cals.wisc.edu/category/agriculture/" style="display: none;" class="more">See More</a></li>
+					<li><a href="#" data-cat="Announcements" class="selected announcements categor"><span></span>Announcements</a><a href="http://news.cals.wisc.edu/category/highlights/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="Energy" class="selected energy categor"><span></span>Energy</a><a href="http://news.cals.wisc.edu/category/energy/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="Environment" class="selected environment categor"><span></span>Environment</a><a href="http://news.cals.wisc.edu/category/environment/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="Events" class="selected events categor"><span></span>Events</a><a href="http://twitter.com/uwmadisoncals" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="Food" class="selected food categor"><span></span>Food</a><a href="http://ecals.cals.wisc.edu/category/food-2/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="Health" class="selected health categor"><span></span>Health</a><a href="http://news.cals.wisc.edu/category/health/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="People" class="selected people categor"><span></span>People</a><a href="http://ecals.cals.wisc.edu/category/people/" style="display: none;" class="more">See More</a></li>
+			    	<li><a href="#" data-cat="social" class="selected social categor"><span></span>Social</a><a href="http://twitter.com/uwmadisoncals" style="display: none;" class="more">See More</a></li>
+			    	-->
+		  		</ul>
+	  		</div>
+	  	
+	  	
+		  	<div class="categoriesSort">	
+		    	 <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
+			    	<!--<li><a href="#" data-cat="number">Highlighted</a></li>-->
+			        <li><a href="#" data-cat="chronological" class="selected">Chronological</a></li>
+			        
+			        <li><a href="#" data-cat="alphabetical">Alphabetical</a></li>
+			        <li><a href="#" data-cat="grouped">Grouped</a></li>
+		  		</ul>
+		  	</div>
+	  	
+	  		<a href="#" class="remembersettings selected" data-rem="yes">Remember My Settings</a>
+
+  		</div>
+    </div>
 			
 			<?php $options = twentyeleven_get_theme_options();
 $current_layout = $options['theme_layout'];
@@ -88,52 +133,7 @@ if ( 'content' != $current_layout ) : ?>
 
 		
 
-		<div class="newsItem customize">
-			<span class="number">1</span>
-			<div class="hiddendate">-9999999999</div>
-    	<div class="categories">
-	  		<div class="topics">
-		  		<ul>
-		  			
-
-	    	<?php
-/*$categories = get_categories();
-foreach ($categories as $cat) {
-
-if($cat->cat_name != 'Uncategorized') {
-echo '<li><a href="#" data-cat="'.$cat->slug.'" class="selected categor">'.$cat->cat_name.'</a></li>';
-}
-
-}*/
-?>
-					<li><a href="#" data-cat="Agriculture" class="selected agriculture categor"><span></span>Agriculture</a><a href="http://news.cals.wisc.edu/category/agriculture/" style="display: none;" class="more">See More</a></li>
-					<li><a href="#" data-cat="Announcements" class="selected announcements categor"><span></span>Announcements</a><a href="http://news.cals.wisc.edu/category/highlights/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="Energy" class="selected energy categor"><span></span>Energy</a><a href="http://news.cals.wisc.edu/category/energy/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="Environment" class="selected environment categor"><span></span>Environment</a><a href="http://news.cals.wisc.edu/category/environment/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="Events" class="selected events categor"><span></span>Events</a><a href="http://twitter.com/uwmadisoncals" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="Food" class="selected food categor"><span></span>Food</a><a href="http://ecals.cals.wisc.edu/category/food-2/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="Health" class="selected health categor"><span></span>Health</a><a href="http://news.cals.wisc.edu/category/health/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="People" class="selected people categor"><span></span>People</a><a href="http://ecals.cals.wisc.edu/category/people/" style="display: none;" class="more">See More</a></li>
-			    	<li><a href="#" data-cat="social" class="selected social categor"><span></span>Social</a><a href="http://twitter.com/uwmadisoncals" style="display: none;" class="more">See More</a></li>
-			    	
-		  		</ul>
-	  		</div>
-	  	
-	  	
-		  	<div class="categoriesSort">	
-		    	 <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
-			    	<!--<li><a href="#" data-cat="number">Highlighted</a></li>-->
-			        <li><a href="#" data-cat="chronological" class="selected">Chronological</a></li>
-			        
-			        <li><a href="#" data-cat="alphabetical">Alphabetical</a></li>
-			        <li><a href="#" data-cat="grouped">Grouped</a></li>
-		  		</ul>
-		  	</div>
-	  	
-	  		<a href="#" class="remembersettings selected" data-rem="yes">Remember My Settings</a>
-
-  		</div>
-    </div>
+		
    		<?php	if ( is_home() ) { query_posts( 'showposts=1' ); } ?>
 
 			<?php if ( have_posts() ) : ?>
@@ -316,16 +316,16 @@ echo $category[0]->slug; ?></div>
 				
 							<?php 
 								//get news from eCALS
-								cals_fetch_feed2('http://ecals.cals.wisc.edu/?cat=-356,-384,-385,-363,-358,-366,-355&feed=rss2', 4, 1, -1);
+								//cals_fetch_feed2('http://ecals.cals.wisc.edu/?cat=-356,-384,-385,-363,-358,-366,-355&feed=rss2', 4, 1, -1);
 								 
 								//get news from CALS News
-								cals_fetch_feed2('http://news.cals.wisc.edu/?feed=rss2&cat=-20,-21,-66,-67,0', 4, 1, -1); 
+								//cals_fetch_feed2('http://news.cals.wisc.edu/?feed=rss2&cat=-20,-21,-66,-67,0', 4, 1, -1); 
 								
 								
 								
 								
 								
-								cals_get_last_tweet();
+								//cals_get_last_tweet();
 							?>
 							<?php get_sidebar( 'homepage' ); ?>
 				<?php //twentyeleven_content_nav( 'nav-below' ); ?>
