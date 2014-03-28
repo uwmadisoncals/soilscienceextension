@@ -31,6 +31,12 @@ html.csstransforms body#calsblack.page div.mobileScroll div#page.hfeed header#br
     top: -28px;
 }
 
+html.csstransforms body#calsblack.single div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
+    position: absolute;
+    right: -60px;
+    top: -28px;
+}
+
 div.newsItem .text {
 	position: relative;
 	}
