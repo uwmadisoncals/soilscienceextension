@@ -38,3 +38,80 @@ div.newsItem .text {
 div#container.super-list div.newsItem div.previousa div.text div.excerpt{
 	display:inline;
 }
+
+
+
+/* Isotope styling on index.php */
+.newsItem a .highlight, .newsItem .previousa .highlight {
+    border-radius: 4px 4px 4px 4px;
+}
+
+
+.newsItem{
+ border-radius: 4px 4px 4px 4px;
+}
+
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main div#primary div#content div#container.super-list div.newsItem div.previousa div.text {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+div.newsItem .text {
+    background: none repeat scroll 0 0 #FFFFFF;
+    max-height: 100%;
+    min-height: 20px;
+    padding: 30px 24px;
+    position: relative;
+}
+
+.newsItem .text .glyph {
+    display: none;
+}
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main div#primary div#content div#container.super-list div.newsItem div.previousa div.text div.titleheading{
+    border-bottom: medium none;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align:left;
+}
+
+.categoryItem {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: "Open Sans",sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main div#primary div#content div#container.super-list div.newsItem div.previousa div.text div.titleheading h3{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+
+div#container.super-list div.newsItem div.previousa div.text div.excerpt {
+    text-align: left;
+}
+
+
+html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main div#primary div#content div#container.super-list div.newsItem div.previousa div.text div.dateheading{
+    color: #AE7619;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 1.4em;
+    margin-top: 0;
+    text-align: left;
+    text-transform: none;
+}

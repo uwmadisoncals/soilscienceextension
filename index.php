@@ -134,7 +134,7 @@ if ( 'content' != $current_layout ) : ?>
 		
 
 		
-   		<?php	if ( is_home() ) { query_posts( 'showposts=1' ); } ?>
+   		<?php	if ( is_home() ) { query_posts( 'showposts=9' ); } ?>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -179,6 +179,10 @@ echo $category[0]->slug; ?>">
     		<div class="text">
     			<div class="glyph"><div class="symbol"></div></div>
     			<div class="titleheading">
+    			<div class="categoryItem"><?php
+					$category = get_the_category(); 
+					echo $category[0]->cat_name;
+					?></div>
     			<h3><?php the_title(); ?></h3>
     			</div>
     			<div class="excerpt">
