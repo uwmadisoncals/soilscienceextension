@@ -271,7 +271,7 @@ function cals_fetch_feed2($feed_uri,$num_items, $echo = 1, $length =-1, $exclude
 	}
 }
 
-function soilsextension_enqueue_scripts(){
+/*function soilsextension_enqueue_scripts(){
 	 $handle = 'soilsextension_scripts';
 	 $src = get_theme_root_uri() . '/soilsextension/js/min/master.min.js';
 
@@ -280,6 +280,6 @@ function soilsextension_enqueue_scripts(){
 	wp_enqueue_script('soilsextension_scripts');
 }
 
-add_action('wp_enqueue_scripts', 'soilsextension_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'soilsextension_enqueue_scripts'); */
 
 ?>
