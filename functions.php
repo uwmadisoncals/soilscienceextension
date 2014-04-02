@@ -1,4 +1,4 @@
-<!-- In a child theme, all of the functions of the parent theme are present, unless overridden here -->
+
 <?php
 
 function cals_fetch_feed2($feed_uri,$num_items, $echo = 1, $length =-1, $exclude=''){
