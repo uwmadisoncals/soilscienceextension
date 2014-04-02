@@ -281,5 +281,3 @@ function cals_fetch_feed2($feed_uri,$num_items, $echo = 1, $length =-1, $exclude
 }
 
 add_action('wp_enqueue_scripts', 'soilsextension_enqueue_scripts'); */
-
-?>
