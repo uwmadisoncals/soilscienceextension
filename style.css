@@ -121,3 +121,7 @@ html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main 
     text-align: left;
     text-transform: none;
 }
+
+html body.search.search-results span.edit-link a{
+    display:none;
+}
