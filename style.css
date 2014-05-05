@@ -125,3 +125,23 @@ html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed div#main 
 html body.search.search-results span.edit-link a{
     display:none;
 }
+
+html body.search.search-results div.headeroverlay{
+    height:auto;
+}
+
+html body.search.search-results div#content {
+    margin-top:100px;
+}
+
+html body.page-sr span.edit-link a {
+    display:none;
+}
+
+html body.page-sr div.comments-link a {
+    display:none;
+}
+
+html body.page-sr span.comments-link a span.leave-reply {
+    display:none;
+}

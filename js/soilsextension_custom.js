@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-//alert("wookiesomething");
+//alert($("div.headeroverlay").css("height"));
 
 // Fix the height of the main div based upon the number of rows in the Main navigation. Supports up to 3 rows.
 var headeroverlay_hght = function (){

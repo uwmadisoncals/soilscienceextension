@@ -6,7 +6,9 @@
  * @since CALS 1.0
  */
 
-get_header(); ?>
+get_header(); 
+?>
+
 
 <div class="mobileScroll">
 <a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
