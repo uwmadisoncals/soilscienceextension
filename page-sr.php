@@ -25,7 +25,8 @@ foreach ($gets as $key=>$val){
 
 	switch($arr){
 		case (isset($arr["year"]) && isset($arr["subject"])):
-		$year=$arr["year"];
+		print_r("year and author");
+		/*$year=$arr["year"];
 
 			$args = array(
 	'numberposts' => -1,
@@ -44,15 +45,15 @@ foreach ($gets as $key=>$val){
 										'compare' => '>'
 									)
 						)
-);
-		break;
+); */
+		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
-		//print_r("year and author");
+		print_r("year and author");
 		break;
 
 		case (isset($arr["keyword"])):
-		//print_r("all years and keyword");
+		print_r("all years and keyword");
 		break;
 
 		default:
