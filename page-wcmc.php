@@ -42,6 +42,8 @@ get_header(); ?>
 						<li>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							<p><?php the_field('date'); ?></p>
+
+
 						</li>
 					<?php endwhile; ?>
 					</ul>

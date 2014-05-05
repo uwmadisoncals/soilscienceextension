@@ -21,18 +21,18 @@
 		</select>
 
 		<select name="subject">
-			<option value="1" name="subject">Nutrient Management</option>
-			<option value="2" name="subject">Insects and Disease</option>
-			<option value="7" name="subject">Weed Management</option>
-			<option value="3" name="subject">Vegetable Management</option>
-			<option value="10" name="subject">Forages</option>
-			<option value="5" name="subject">Grain Topics</option>
-			<option value="8" name="subject">Soil, Water and Climate</option>
-			<option value="11" name="subject">Manure</option>
-			<option value="4" name="subject">Ag Business</option>
-			<option value="6" name="subject">Ag Regulation</option>
-			<option value="9" name="subject">Genetics</option>
-			<option value="%%" name="subject">ALL SUBJECTS</option>
+			<option value="nutrient management" name="subject">Nutrient Management</option>
+			<option value="insects and disease" name="subject">Insects and Disease</option>
+			<option value="weed management" name="subject">Weed Management</option>
+			<option value="vegetable management" name="subject">Vegetable Management</option>
+			<option value="forages" name="subject">Forages</option>
+			<option value="grain topics" name="subject">Grain Topics</option>
+			<option value="soil, water and climate" name="subject">Soil, Water and Climate</option>
+			<option value="manure" name="subject">Manure</option>
+			<option value="agriculture business" name="subject">Ag Business</option>
+			<option value="agriculture regulation" name="subject">Ag Regulation</option>
+			<option value="genetics" name="subject">Genetics</option>
+			<option value="all subjects" name="subject">ALL SUBJECTS</option>
 		</select>
 
 		<input type="submit" name="submit" alt="Search" value="Go" />

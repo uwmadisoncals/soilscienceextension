@@ -25,27 +25,27 @@ foreach ($gets as $key=>$val){
 
 	switch($arr){
 		case (isset($arr["year"]) && isset($arr["subject"])):
-		print_r("year and author");
-		/*$year=$arr["year"];
+				//print_r("year and author");
+				$year=intval($arr["year"]);
+				$subj=$arr["subject"];
 
-			$args = array(
-	'numberposts' => -1,
-	'post_type' => 'wcmc',
-	'meta_query' => array(
-							'relation' => 'AND',
-									array(
-										'key' => 'date',
-										'value' => 'Melbourne',
-										'compare' => '='
-									),
-									array(
-										'key' => 'attendees',
-										'value' => 100,
-										'type' => 'NUMERIC',
-										'compare' => '>'
-									)
-						)
-); */
+					$args = array(
+			'numberposts' => -1,
+			'post_type' => 'wcmc',
+			'meta_query' => array(
+									'relation' => 'AND',
+											array(
+												'key' => 'date',
+												'compare' => '=',
+												'value' => $year
+											),
+											array(
+												'key' => 'subject',
+												'value' => $subj,
+												'compare' => '='
+											)
+								)
+				); 
 		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
@@ -74,12 +74,12 @@ foreach ($gets as $key=>$val){
 				<?php
 
 				// args
-				$args = array(
+				/*$args = array(
 					'numberposts' => -1,
 					'post_type' => 'wcmc',
 					'orderby' => 'meta_value_num',
 					'order' => 'ASC'
-				);
+				); */
 				 
 				// get results
 				$the_query = new WP_Query( $args );
@@ -105,6 +105,31 @@ foreach ($gets as $key=>$val){
 		</div><!-- #primary -->
 
 	</div>
+
+
+	<?php
+	//############################################
+	//#############    FIREPHP  ##################
+ 	/*
+
+	$firephp = FirePHP::getInstance(true);
+	 
+	$var = $arr;
+	$var2 = $subj;
+	$var3= $year;
+	$var4 = $args;
+
+	 
+	$firephp->log($var,'$arr');
+	$firephp->log($var2,'$subj');
+	$firephp->log($var3,'$year');
+	$firephp->log($var4,'$args');
+
+	*/
+	//############################################
+	//############################################
+	 ?>
+
 <?php get_footer(); ?>
 
 </div>
