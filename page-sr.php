@@ -25,7 +25,26 @@ foreach ($gets as $key=>$val){
 
 	switch($arr){
 		case (isset($arr["year"]) && isset($arr["subject"])):
-		//print_r("year and subject");
+		$year=$arr["year"];
+
+			$args = array(
+	'numberposts' => -1,
+	'post_type' => 'wcmc',
+	'meta_query' => array(
+							'relation' => 'AND',
+									array(
+										'key' => 'date',
+										'value' => 'Melbourne',
+										'compare' => '='
+									),
+									array(
+										'key' => 'attendees',
+										'value' => 100,
+										'type' => 'NUMERIC',
+										'compare' => '>'
+									)
+						)
+);
 		break;
 
 		case (isset($arr["year"]) && isset($arr["author"])):
@@ -51,8 +70,8 @@ foreach ($gets as $key=>$val){
 
 		<div id="primary">
 			<div id="content" role="main">
-				<?php print_r($arr);
- 
+				<?php
+
 				// args
 				$args = array(
 					'numberposts' => -1,

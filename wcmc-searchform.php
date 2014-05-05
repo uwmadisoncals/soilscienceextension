@@ -22,7 +22,7 @@
 
 		<select name="subject">
 			<option value="1" name="subject">Nutrient Management</option>
-			<option value="2" name="subject">Insects and Diseases</option>
+			<option value="2" name="subject">Insects and Disease</option>
 			<option value="7" name="subject">Weed Management</option>
 			<option value="3" name="subject">Vegetable Management</option>
 			<option value="10" name="subject">Forages</option>
