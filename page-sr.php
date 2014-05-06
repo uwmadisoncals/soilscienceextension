@@ -35,9 +35,9 @@ foreach ($gets as $key=>$val){
 			'meta_query' => array(
 									'relation' => 'AND',
 											array(
-												'key' => 'date',
+												'key' => 'date', //returns value assoc with 'date'
 												'compare' => '=',
-												'value' => $year
+												'value' => $year //val of dropdown
 											),
 											array(
 												'key' => 'subject',
@@ -49,7 +49,27 @@ foreach ($gets as $key=>$val){
 		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
-		print_r("year and author");
+		$year=intval($arr["year"]);
+		$author=$arr["author"];
+
+					$args = array(
+			'numberposts' => -1,
+			'post_type' => 'wcmc',
+			'meta_query' => array(
+									'relation' => 'AND',
+											array(
+												'key' => 'date', //gets ACF value assoc with 'date'
+												'compare' => '=',
+												'value' => $year //val of dropdown
+											),
+											array(
+												'key' => 'author_name1', //gets ACF value assoc with 'author_name1'
+												'value' => $auth, // gets value of dropdown
+												'compare' => '='
+											)
+								)
+				); 
+		//print_r("year and author");
 		break;
 
 		case (isset($arr["keyword"])):
@@ -115,15 +135,17 @@ foreach ($gets as $key=>$val){
 	$firephp = FirePHP::getInstance(true);
 	 
 	$var = $arr;
-	$var2 = $subj;
+	$var2 = $author;
 	$var3= $year;
 	$var4 = $args;
 
+
 	 
 	$firephp->log($var,'$arr');
-	$firephp->log($var2,'$subj');
+	$firephp->log($var2,'$author');
 	$firephp->log($var3,'$year');
 	$firephp->log($var4,'$args');
+
 
 	*/
 	//############################################

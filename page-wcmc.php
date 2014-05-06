@@ -42,6 +42,7 @@ get_header(); ?>
 						<li>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							<p><?php the_field('date'); ?></p>
+							<p><?php the_field('author_name1'); ?></p>
 
 
 						</li>
