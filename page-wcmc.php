@@ -43,6 +43,47 @@ get_header(); ?>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							<p><?php the_field('date'); ?></p>
 							<p><?php the_field('author_name1'); ?></p>
+							<?php 
+								$tterm=get_the_terms($post_ID,'wcmc_keywords');
+								if($tterm){
+									foreach ($tterm as $tm){ ?>
+										<?php echo $tm->name; ?>
+									<?php } 
+								}//EndIf
+							 ?>
+						
+				
+							
+							<?php //$get_auth_name = gettype(get_field( "author_name1" ));
+								$getTerms=get_the_terms($post_ID,'wcmc_keywords');
+							 ?>
+
+							<?php 
+									//############################################
+									//#############    FIREPHP  ##################
+								 	
+
+									$firephp = FirePHP::getInstance(true);
+									 
+									$var99 = $get_auth_name;
+									$var33 = $tterm;
+									
+									$var88 = $getTerms;
+									
+
+
+									 
+									//$firephp->log($var99,'$get_auth_name');
+									$firephp->log($var33,'$tterm');
+									
+									$firephp->log($var88,'$getTerms');
+									
+
+
+									
+									//############################################
+									//############################################
+							 ?>
 
 
 						</li>

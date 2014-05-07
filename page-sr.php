@@ -12,11 +12,13 @@
  */
 
 get_header(); 
-
+//maps the raw $_GET data to array
 $gets =array("year"=> $_GET["yr"],"subject"=> $_GET["subject"], "author"=>$_GET["auth"], "keyword"=> $_GET["keyword"]);
+
+//creates an array, for later use.
 $arr=array();
 
-//returns assoc array of only the set values
+//accepts $gets array filters out unset values, updates $arr
 foreach ($gets as $key=>$val){
 	if(isset($val)){
 		$arr[$key]=$val;
@@ -35,10 +37,10 @@ foreach ($gets as $key=>$val){
 			'meta_query' => array(
 									'relation' => 'AND',
 											array(
-												'key' => 'date', //returns value assoc with 'date'
+												'key' => 'date', //gets ACF value assoc with 'date'
 												'compare' => '=',
-												'value' => $year //val of dropdown
-											),
+												'value' => $year // gets value from $arr, which gets value from dropdown
+												),
 											array(
 												'key' => 'subject',
 												'value' => $subj,
@@ -64,7 +66,7 @@ foreach ($gets as $key=>$val){
 											),
 											array(
 												'key' => 'author_name1', //gets ACF value assoc with 'author_name1'
-												'value' => $auth, // gets value of dropdown
+												'value' => $author, // gets value from $arr, which gets value from dropdown
 												'compare' => '='
 											)
 								)
@@ -73,7 +75,25 @@ foreach ($gets as $key=>$val){
 		break;
 
 		case (isset($arr["keyword"])):
-		print_r("all years and keyword");
+		$kywd=$arr["keyword"];
+		$getTerms = get_terms('wcmc_keywords','hide_empty=0');
+		//$name_getTerms = $getTerms->name;
+		//print_r("all years and keyword");
+						/*$args = array(
+					'numberposts' => -1,
+					'post_type' => 'wcmc',
+					'meta_key' => 'kewywords',
+					'meta_value' => $kywd
+				); */
+		
+				$args=array(
+					'post_type'=>'wcmc',
+					'tax_query'=>array(
+						array('taxonomy' => 'wcmc_keywords',
+						'field' => 'slug',
+						'terms' => 'quality')
+						)
+					);
 		break;
 
 		default:
@@ -138,20 +158,30 @@ foreach ($gets as $key=>$val){
 	$var2 = $author;
 	$var3= $year;
 	$var4 = $args;
+	$var5 = $auth;
+	$var6 = $gets;
+	$var7 = $kywd;
+	$var8 = $getTerms;
+	$var9 = $name_getTerms;
 
 
-	 
+
+	$firephp->log($var6,'$gets');
 	$firephp->log($var,'$arr');
-	$firephp->log($var2,'$author');
-	$firephp->log($var3,'$year');
+	//$firephp->log($var2,'$author');
+	//$firephp->log($var3,'$year');
+	//$firephp->log($var5,'$auth');
+	$firephp->log($var7,'$kywd');
 	$firephp->log($var4,'$args');
+	$firephp->log($var8,'$getTerms');
+	$firephp->log($var,'$name_getTerms');
 
 
 	*/
 	//############################################
 	//############################################
 	 ?>
-
+<?php echo $GLOBALS['wp_query']->request; ?>
 <?php get_footer(); ?>
 
 </div>
