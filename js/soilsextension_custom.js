@@ -13,6 +13,14 @@ var headeroverlay_hght = function (){
 	};
 };
 
+var SoilsExtAutoComplete = function(){
+	$().autocomplete({
+		source="search.php",
+		minLength:1
+	});
+
+};
+
 headeroverlay_hght();
 
 }); 

@@ -75,7 +75,7 @@ foreach ($gets as $key=>$val){
 		break;
 
 		case (isset($arr["keyword"])):
-		$kywd=$arr["keyword"];
+		$kywd=strtolower($arr["keyword"]);
 		$getTerms = get_terms('wcmc_keywords','hide_empty=0');
 		//$name_getTerms = $getTerms->name;
 		//print_r("all years and keyword");
@@ -91,7 +91,7 @@ foreach ($gets as $key=>$val){
 					'tax_query'=>array(
 						array('taxonomy' => 'wcmc_keywords',
 						'field' => 'slug',
-						'terms' => 'quality')
+						'terms' => $kywd)
 						)
 					);
 		break;
@@ -176,8 +176,8 @@ foreach ($gets as $key=>$val){
 	$firephp->log($var8,'$getTerms');
 	$firephp->log($var,'$name_getTerms');
 
-
 	*/
+	
 	//############################################
 	//############################################
 	 ?>
