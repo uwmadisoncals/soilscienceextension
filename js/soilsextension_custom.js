@@ -14,8 +14,8 @@ var headeroverlay_hght = function (){
 };
 
 var SoilsExtAutoComplete = function(){
-	$().autocomplete({
-		source="search.php",
+	$('#wcmc-ajax').autocomplete({
+		source:["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"],
 		minLength:1
 	});
 

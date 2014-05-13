@@ -8,4 +8,12 @@ $classes[] = $post->post_type . '-' . $post->post_name;
 }
 return $classes;
 }
+
 add_filter( 'body_class', 'add_slug_body_class' );
+
+function wcmc_ajax(){
+
+	require_once("wcmcAJAX.php");
+	$ajaxResponse = wcmcAutoComplete($customTerms);
+	print_r($ajaxResponse);
+}
