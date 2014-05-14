@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       build: {
-        src: ['js/jquery-1.7.1.min.js','js/jquery.ui.js','js/jquery.iosslider.js','js/jquery.isotope.min.js','js/jquery-css-transform.js','js/jquery-rotate.js','js/browserdetect.js','js/mainactions.js','js/min/gsapi.min.js','js/blurobjs.js','library/scripts/vallenato.js','js/soilsextension_custom.js'],
+        src: ['js/jquery-1.7.1.min.js','js/jquery.ui.js','js/jquery-ui-1.10.4.autocomplete.min.js','js/jquery.iosslider.js','js/jquery.isotope.min.js','js/jquery-css-transform.js','js/jquery-rotate.js','js/browserdetect.js','js/mainactions.js','js/min/gsapi.min.js','js/blurobjs.js','library/scripts/vallenato.js','js/soilsextension_custom.js'],
         dest: 'js/min/master.min.js'
       }
     },
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       separator: ' ',
     },
     dist: {
-      src: ['main-child.css', 'mobile-child.css'],
+      src: ['main-child.css', 'mobile-child.css','jquery-ui-1.10.4.custom.min.css'],
       dest: 'master-child.css',
     },
   },

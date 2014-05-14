@@ -1,5 +1,11 @@
 $( document ).ready(function() {
-//alert(console.log("testing"));
+//alert("testing");
+
+/*if (typeof jQuery.ui !=='undefined'){
+	alert("JQuery UI loaded");
+}else{
+	alert("No jquery UI");
+}*/
 
 // Fix the height of the main div based upon the number of rows in the Main navigation. Supports up to 3 rows.
 var headeroverlay_hght = function (){
@@ -13,10 +19,12 @@ var headeroverlay_hght = function (){
 	};
 };
 
+
+var availableTags = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"];
+
 var SoilsExtAutoComplete = function(){
 	$('#wcmc-ajax').autocomplete({
-		source:["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"],
-		minLength:1
+		source:availableTags
 	});
 
 };
