@@ -72,7 +72,7 @@ University of Wisconsin Foundation.</p>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
-<script type="text/javascript" src="<?php echo get_theme_root_uri(); ?>/soilsextension_working/js/min/master.min.js"></script>
+<script type="text/javascript" src="<?php echo get_theme_root_uri(); ?>/soilsextension_working/js/min/master.notMiny.js"></script>
 
 
  <!-- <script type="text/javascript">

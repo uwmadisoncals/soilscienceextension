@@ -21,6 +21,7 @@ get_header(); ?>
 			<div id="content" role="main">
 			
 			<?php wcmc_ajax(); ?>
+
 						<div id="formWrap">
 						    <form id="messageForm" action="#">
 						        <fieldset>
@@ -39,7 +40,8 @@ get_header(); ?>
 						        </fieldset>
 						    </form>
 						</div>
-						<script type="text/javascript">
+						<p><?php echo get_stylesheet_directory_uri() ?>/wcmcAJAX2.php?callback=?  </p>
+						<!--<script type="text/javascript">
 						    $(function(){
 						             
 						        //attach autocomplete
@@ -49,7 +51,7 @@ get_header(); ?>
 						            source: function(req, add){
 						                     
 						                //pass request to server
-						                $.getJSON("friends.php?callback=?", req, function(data) {
+						                $.getJSON("<?php bloginfo('template_directory') ?>/wcmcAJAX2.php?callback=?", req, function(data) {
 						                             
 						                    //create array for response objects
 						                    var suggestions = [];
@@ -85,14 +87,16 @@ get_header(); ?>
 						                //prevent 'to' field being updated and correct position
 						                $("#to").val("").css("top", 2);
 						            }
-						        });  
+						        });                     
+						    });
 
-
-							$("#friends").click(function(){
-									    //focus 'to' field
-									    $("#to").focus();
-									});
-                 
+								//add click handler to friends div
+								$("#friends").click(function(){
+								                     
+								    //focus 'to' field
+								    $("#to").focus();
+								});
+								                 
 								//add live handler for clicks on remove links
 								$(".remove", document.getElementById("friends")).live("click", function(){
 								                 
@@ -104,12 +108,9 @@ get_header(); ?>
 								        $("#to").css("top", 0);
 								    }               
 								});
+						</script> -->
 
-
-
-						    });
-						</script>
-
+		
 			</div><!-- #content -->
 			<?php get_sidebar(); ?>
 			<div class="clear"></div>
@@ -121,21 +122,23 @@ get_header(); ?>
 	<?php
 	//############################################
 	//#############    FIREPHP  ##################
- 	/*
+ 	
 
 	$firephp = FirePHP::getInstance(true);
 	 
 	$var = $mydb;
 	$var_2 = $allUsers;
 	$var_3 = $customTerms;
+	$var_4 =$response;
 
-	$firephp->log($var_2,'$allUsers');
-	$firephp->log($var_3,'$customTerms');
+	//$firephp->log($var_2,'$allUsers');
+	//$firephp->log($var_3,'$customTerms');
+	$firephp->log($var_4,'$response');
 
 
 
 	
-	*/
+	
 	//############################################
 	//############################################ ?>
 <?php get_footer(); ?>
