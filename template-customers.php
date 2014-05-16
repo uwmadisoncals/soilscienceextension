@@ -41,15 +41,12 @@ get_header(); ?>
                                        
                                         <?php
                                                 global $wpdb;
-                                                $customers = $wpdb->get_results("SELECT * FROM customers;");
+                                                $customers = $wpdb->get_results("SELECT * FROM friends;");
                                                                                        
                                                 echo "<table>";
                                                 foreach($customers as $customer){
                                                         echo "<tr>";
                                                         echo "<td>".$customer->name."</td>";
-                                                        echo "<td>".$customer->email."</td>";
-                                                        echo "<td>".$customer->phone."</td>";
-                                                        echo "<td>".$customer->address."</td>";
                                                         echo "</tr>";
                                                 }
                                                 echo "</table>";
@@ -69,6 +66,7 @@ get_header(); ?>
                                                         jQuery.ajax({
                                                                 type:"POST",
                                                                 url: "http://hostcals.localhost/soilscienceextension/wp-admin/admin-ajax.php",
+                                                                //url: "/wp-admin/admin-ajax.php",
                                                                 data: newCustomerForm,
                                                                 success:function(data){
                                                         jQuery("#feedback").html(data);
