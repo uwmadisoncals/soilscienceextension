@@ -68,7 +68,7 @@ get_header(); ?>
                                                        
                                                         jQuery.ajax({
                                                                 type:"POST",
-                                                                url: "/wp-admin/admin-ajax.php",
+                                                                url: "http://hostcals.localhost/soilscienceextension/wp-admin/admin-ajax.php",
                                                                 data: newCustomerForm,
                                                                 success:function(data){
                                                         jQuery("#feedback").html(data);

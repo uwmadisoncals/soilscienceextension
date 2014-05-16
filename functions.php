@@ -62,3 +62,14 @@ function addCustomer(){
 }
 add_action('wp_ajax_addCustomer', 'addCustomer');
 add_action('wp_ajax_nopriv_addCustomer', 'addCustomer');
+
+function get_ajaxurl(){
+?>
+<script type="text/javascript">
+        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+
+</script>
+<?php 
+}
+
+add_action('wp_head','get_ajaxurl');
