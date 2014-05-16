@@ -40,75 +40,8 @@ get_header(); ?>
 						        </fieldset>
 						    </form>
 						</div>
-						<p><?php echo get_stylesheet_directory_uri() ?>/wcmcAJAX2.php?callback=?  </p>
-						<!--<script type="text/javascript">
-						    $(function(){
-						             
-						        //attach autocomplete
-						        $("#to").autocomplete({
-						                     
-						            //define callback to format results
-						            source: function(req, add){
-						                     
-						                //pass request to server
-						                $.getJSON("<?php bloginfo('template_directory') ?>/wcmcAJAX2.php?callback=?", req, function(data) {
-						                             
-						                    //create array for response objects
-						                    var suggestions = [];
-						                             
-						                    //process response
-						                    $.each(data, function(i, val){                              
-						                    suggestions.push(val.name);
-						                });
-						                             
-						                //pass array to callback
-						                add(suggestions);
-						            });
-						        },
-						                     
-						        //define select handler
-						        select: function(e, ui) {
-						                         
-						            //create formatted friend
-						            var friend = ui.item.value,
-						                span = $("<span>").text(friend),
-						                a = $("<a>").addClass("remove").attr({
-						                    href: "javascript:",
-						                    title: "Remove " + friend
-						                }).text("x").appendTo(span);
-						                         
-						                //add friend to friend div
-						                span.insertBefore("#to");
-						            },
-						                     
-						            //define select handler
-						            change: function() {
-						                         
-						                //prevent 'to' field being updated and correct position
-						                $("#to").val("").css("top", 2);
-						            }
-						        });                     
-						    });
-
-								//add click handler to friends div
-								$("#friends").click(function(){
-								                     
-								    //focus 'to' field
-								    $("#to").focus();
-								});
-								                 
-								//add live handler for clicks on remove links
-								$(".remove", document.getElementById("friends")).live("click", function(){
-								                 
-								    //remove current friend
-								    $(this).parent().remove();
-								                     
-								    //correct 'to' field position
-								    if($("#friends span").length === 0) {
-								        $("#to").css("top", 0);
-								    }               
-								});
-						</script> -->
+						<p><?php echo  admin_url('admin-ajax.php')?> </p>
+				
 
 		
 			</div><!-- #content -->
