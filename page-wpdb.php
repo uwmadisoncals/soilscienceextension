@@ -40,7 +40,7 @@ get_header(); ?>
 						        </fieldset>
 						    </form>
 						</div>
-						<p><?php echo get_stylesheet_directory_uri() ?>/wcmcAJAX2.php?callback=?  </p>
+						<p><?php echo get_template_directory() ?>  </p>
 						<!--<script type="text/javascript">
 						    $(function(){
 						             

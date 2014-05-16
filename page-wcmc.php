@@ -101,7 +101,7 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
-
+<p><?php echo get_stylesheet_directory_uri() ?>  </p>
 <?php get_footer(); ?>
 
 </div>
