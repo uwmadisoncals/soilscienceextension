@@ -39,7 +39,7 @@ get_header(); ?>
                                                 <br/><br/>
                                                
                                        
-                                        <?php
+                                        <?php 
                                                 global $wpdb;
                                                 $customers = $wpdb->get_results("SELECT * FROM friends;");
                                                                                        
@@ -65,8 +65,9 @@ get_header(); ?>
                                                        
                                                         jQuery.ajax({
                                                                 type:"POST",
-                                                                url: "http://hostcals.localhost/soilscienceextension/wp-admin/admin-ajax.php",
+                                                                //url: "http://hostcals.localhost/soilscienceextension/wp-admin/admin-ajax.php",
                                                                 //url: "/wp-admin/admin-ajax.php",
+                                                                url: ajaxurl,
                                                                 data: newCustomerForm,
                                                                 success:function(data){
                                                         jQuery("#feedback").html(data);

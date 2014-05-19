@@ -95,7 +95,7 @@ ob_start();
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/styles/vallenato.css" type="text/css" media="screen">
-
+<script type="text/javascript"> var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";</script>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
