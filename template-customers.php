@@ -20,7 +20,7 @@ get_header(); ?>
                                                 <form type="post" action="" id="newCustomerForm">
                                                        
                                                         <label for="name">Name:</label>
-                                                        <input name="name" type="text" />
+                                                        <input id="autocompleteID" name="name" type="text" />
                                                        
                                                         <label for="email">Email:</label>
                                                         <input name="email" type="text" />
@@ -56,7 +56,7 @@ get_header(); ?>
                                        
                                         ?>
                                        
-                                        <script type="text/javascript">
+                                        <!--<script type="text/javascript">
                                                 jQuery('#newCustomerForm').submit(ajaxSubmit);
                                                
                                                 function ajaxSubmit(){
@@ -79,7 +79,7 @@ get_header(); ?>
                                                        
                                                         return false;
                                                 }
-                                        </script>
+                                        </script> -->
                                        
  
  

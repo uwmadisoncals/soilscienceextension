@@ -73,3 +73,23 @@ add_action('wp_ajax_nopriv_addCustomer', 'addCustomer');
 }
 
 add_action('wp_head','get_ajaxurl'); */
+
+wp_register_script('autocompleteAjaxHandle',get_stylesheet_directory() . "/autocompleteAjax.js");
+wp_enqueue_script('autocompleteAjaxHandle');
+wp_localize_script('autocompleteAjaxHandle', 'autocompleteAjaxObject', array(
+        'ajaxurl'=>admin_url('admin-ajax.php'),
+        'autocompleteAjax_nonce'=>wp_create_nonce('autocompleteAjax_nonce_val'),
+        'action'=>'autocompleteAjaxAction'
+        ));
+
+function get_autocomplete_suggestions(){
+        $_GET['term'];
+        $suggestions_array=array( 'captain crunch', 'chex', 'cheerios');
+
+        $response = $_GET["callback"]. "(" . json_encode($suggestions_array) . ")";
+        echo $response;
+        exit;
+}
+
+add_action('wp_ajax_autocompleteAjaxAction', 'get_autocomplete_suggestions');
+add_action('wp_ajax_nopriv_autocompleteAjaxAction', 'get_autocomplete_suggestions'); 
