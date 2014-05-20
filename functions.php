@@ -19,3 +19,5 @@ function wcmc_ajax(){
 	$ajaxResponse = wcmcAutoComplete($customTerms);
 	print_r($ajaxResponse);
 }
+
+include_once('inputtitle_submit_inc.php');

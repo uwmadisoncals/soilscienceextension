@@ -150,7 +150,7 @@ foreach ($gets as $key=>$val){
 	<?php
 	//############################################
 	//#############    FIREPHP  ##################
- 	/*
+ 	
 
 	$firephp = FirePHP::getInstance(true);
 	 
@@ -176,7 +176,7 @@ foreach ($gets as $key=>$val){
 	$firephp->log($var8,'$getTerms');
 	$firephp->log($var,'$name_getTerms');
 
-	*/
+	
 	
 	//############################################
 	//############################################
