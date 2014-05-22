@@ -132,7 +132,8 @@ foreach ($gets as $key=>$val){
 						<li>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
-					<?php endwhile; ?>
+					<?php endwhile; else: ?>
+					<p>sorry no results are available.</p>
 					</ul>
 				<?php endif; ?>
 				 
@@ -181,7 +182,7 @@ foreach ($gets as $key=>$val){
 	//############################################
 	//############################################
 	 ?>
-<?php echo $GLOBALS['wp_query']->request; ?>
+
 <?php get_footer(); ?>
 
 </div>

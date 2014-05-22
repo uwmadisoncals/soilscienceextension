@@ -20,7 +20,7 @@ get_header(); ?>
 		
 			<div id="content" role="main">
 			<?php get_template_part('wcmc','searchform') ?>
-			 <?php echo site_url(); ?> 
+			 
 			<?php 
  
 				// args
@@ -37,20 +37,20 @@ get_header(); ?>
 				// The Loop
 				?>
 				<?php if( $the_query->have_posts() ): ?>
-					<ul>
+					
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<li>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							<p><?php the_field('date'); ?></p>
-							<p><?php the_field('author_name1'); ?></p>
-							<?php 
+						
+							<!-- <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> -->
+							<!-- <p><?php the_field('date'); ?></p> -->
+							<!-- <p><?php the_field('author_name1'); ?></p> -->
+							<?php /*
 								$tterm=get_the_terms($post_ID,'wcmc_keywords');
 								if($tterm){
-									foreach ($tterm as $tm){ ?>
-										<?php echo $tm->name; ?>
-									<?php } 
+									foreach ($tterm as $tm){ 
+										 echo $tm->name;
+									} 
 								}//EndIf
-							 ?>
+							 */?>
 						
 				
 							
@@ -86,9 +86,9 @@ get_header(); ?>
 							 ?>
 
 
-						</li>
+						
 					<?php endwhile; ?>
-					</ul>
+				
 				<?php endif; ?>
 				 
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>

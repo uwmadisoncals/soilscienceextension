@@ -51,9 +51,11 @@
 
 		   	$(".autoc ul li a").click(function(e) {
 		   		e.preventDefault();
+
 		   		var searchstr = $(this).text();
+		   		//alert(searchstr);
 		   		$("#autocomplete1").val(searchstr);
-		   		$("#next").click();
+		   		$("#autocomplete1_submit").click();
 
 		   	});
 

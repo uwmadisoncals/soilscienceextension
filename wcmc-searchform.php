@@ -63,7 +63,7 @@
 	<p>Search all years by keyword:</p>
 	<form action="<?php echo site_url('/sr'); ?>" method="GET">
 		<input id="autocomplete1" type="text" value="" size="20" name="keyword">
-		<input type="submit" value="Go" name="submit">
+		<input id="autocomplete1_submit" type="submit" value="Go" name="submit">
 		<div class="autoc"><ul></ul></div>
 	</form>
 
