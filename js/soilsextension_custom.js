@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-alert("testing");
+//alert("testing");
 
 /*if (typeof jQuery.ui !=='undefined'){
 	alert("JQuery UI loaded");

@@ -10,7 +10,11 @@ global $customTerms;
  
 //make a new DB object using a different database
 //$mydb = new wpdb('username','password','database','localhost');
-$mydb = new wpdb('wp155','G4SP6S9[.1','wp155','localhost');
+
+// Daniel's localhost configuration
+//$mydb = new wpdb('wp155','G4SP6S9[.1','wp155','localhost');
+
+$mydb = new wpdb('wcmcajax','CALS_soils2014!','cals_webhost','host.cals.wisc.edu');
 
 $allUsers = $wpdb->get_results("SELECT * FROM $wpdb->users");
 $custTermQuery = "SELECT slug FROM wp_47_terms";
