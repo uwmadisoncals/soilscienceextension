@@ -37,15 +37,15 @@ get_header(); ?>
 	//#############    FIREPHP  ##################
  	
 
-	$firephp = FirePHP::getInstance(true);
+	//$firephp = FirePHP::getInstance(true);
 	 
-	$var78 = $acInput;
+	//$var78 = $acInput;
 
 
 
 
 
-	$firephp->log($var78,'$acInput');
+	//$firephp->log($var78,'$acInput');
 	
 
 	
