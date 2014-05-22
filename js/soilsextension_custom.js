@@ -25,6 +25,7 @@ var headeroverlay_hght = function (){
 	});
 
 }; */
+$("#s, #autocomplete1","#yearAuthorField").attr("autocomplete","off");
 
 headeroverlay_hght();
 

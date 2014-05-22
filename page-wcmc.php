@@ -61,8 +61,8 @@ get_header(); ?>
 							<?php 
 									//############################################
 									//#############    FIREPHP  ##################
-								 	
-/*
+								 	/*
+
 									$firephp = FirePHP::getInstance(true);
 									 
 									$var99 = $get_auth_name;

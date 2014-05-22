@@ -175,9 +175,9 @@ foreach ($gets as $key=>$val){
 	$firephp->log($var4,'$args');
 	$firephp->log($var8,'$getTerms');
 	$firephp->log($var,'$name_getTerms');
-
+*/
 	
-	*/
+	
 	//############################################
 	//############################################
 	 ?>

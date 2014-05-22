@@ -54,7 +54,7 @@
 			<option value="2005" name="yr">2005</option>
 			<option value="20%%" name="yr">2004</option>
 		</select>
-		<input type="text" name="auth" size="20" alt="Search" value="" />
+		<input id="yearAuthorField" type="text" name="auth" size="20" alt="Search" value="" />
 		<input type="submit" name="submit" alt="Search" value="Go" />
 	</form>
 
@@ -62,19 +62,21 @@
 
 	<p>Search all years by keyword:</p>
 	<form action="<?php echo site_url('/sr'); ?>" method="GET">
-		<input type="text" value="" size="20" name="keyword">
+		<input id="autocomplete1" type="text" value="" size="20" name="keyword">
 		<input type="submit" value="Go" name="submit">
+		<div class="autoc"><ul></ul></div>
 	</form>
 
-	<div class="form-signin">
+	<!-- <div class="form-signin">
 	<h2>Input Title</h2>
 	<div class="control-group">
 		<input id="autocomplete1"type="text" required="required" name="title" class="input-block-level" placeholder="Input Title">
+		<input type="text" required="required" name="title" class="input-block-level" placeholder="Input Title">
 		<button class="btn btn-large" id="next">Next</button>
-	</div>
+	</div> 
 		<div class="autoc"><ul></ul></div>		
 	</div>
 
-</div><!-- .search -->
+</div> -->
 
   
