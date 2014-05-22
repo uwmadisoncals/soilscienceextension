@@ -66,6 +66,15 @@
 		<input type="submit" value="Go" name="submit">
 	</form>
 
+	<div class="form-signin">
+	<h2>Input Title</h2>
+	<div class="control-group">
+		<input id="autocomplete1"type="text" required="required" name="title" class="input-block-level" placeholder="Input Title">
+		<button class="btn btn-large" id="next">Next</button>
+	</div>
+		<div class="autoc"><ul></ul></div>		
+	</div>
+
 </div><!-- .search -->
 
   
