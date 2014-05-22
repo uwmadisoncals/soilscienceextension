@@ -51,7 +51,8 @@ function myajax_inputtitleSubmit_func() {
 	global $customTerms;
 
 	$acInput = $_GET['input'];
-	$mydb = new wpdb('wp155','G4SP6S9[.1','wp155','localhost');
+	//$mydb = new wpdb('wp155','G4SP6S9[.1','wp155','localhost');
+	$mydb = new wpdb('wcmcajax','CALS_soils2014!','cals_webhost','host.cals.wisc.edu');
 	// check nonce
 	$nonce = $_GET['nextNonce']; 	
 	if ( ! wp_verify_nonce( $nonce, 'myajax-next-nonce' ) )
