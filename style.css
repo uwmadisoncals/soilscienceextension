@@ -145,3 +145,10 @@ html body.page-sr div.comments-link a {
 html body.page-sr span.comments-link a span.leave-reply {
     display:none;
 }
+
+/*
+Autocomplete styling for the form on page-wcmc
+ */
+div#autoc ul li{
+    list-style-type: none;
+}

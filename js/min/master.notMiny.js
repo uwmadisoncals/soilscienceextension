@@ -17561,7 +17561,20 @@ var headeroverlay_hght = function (){
 	});
 
 }; */
+
+//turn off the autocomplete in these form fields
 $("#s, #autocomplete1, #yearAuthorField").attr("autocomplete","off");
+
+//for each of the matched elements,
+$(".autoc ul").text();
+
+function onMyInterval(){
+	alert($(".autoc ul").text());
+}
+
+setInterval(onMyInterval,3000);
+
+onMyInterval();
 
 headeroverlay_hght();
 

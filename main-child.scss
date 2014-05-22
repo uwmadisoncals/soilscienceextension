@@ -1,0 +1,29 @@
+////////////////////
+// page-wcmc.php  //
+////////////////////
+
+
+/*
+div.wcmc-search
+ */
+html body.page-wcmc div.wcmc-search{
+
+	form div.autoc ul {
+		border:1px solid black;
+		li{
+		list-style-type: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+    html body.page-wcmc div.wcmc-search form div.autoc ul li{
+    list-style-type:none;}
