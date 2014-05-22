@@ -17573,8 +17573,7 @@ headeroverlay_hght();
 						            source: function(req, add){
 						                     
 						                //pass request to server
-						                $.getJSON("<?php bloginfo('template_directory') ?>/wcmcAJAX2.php?callback=?", req, function(data) {
-						                             
+						                $.getJSON("scripts1/wcmcAJAX2.php?callback=?", req, function(data) {  
 						                    //create array for response objects
 						                    var suggestions = [];
 						                             
