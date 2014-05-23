@@ -60,12 +60,16 @@
 
 	<br />
 
+	
 	<p>Search all years by keyword:</p>
-	<form action="<?php echo site_url('/sr'); ?>" method="GET">
+	<form id="access" action="<?php echo site_url('/sr'); ?>" method="GET">
+		<div id="ac_input_wrapper">
 		<input id="autocomplete1" type="text" value="" size="20" name="keyword">
 		<input id="autocomplete1_submit" type="submit" value="Go" name="submit">
-		<div class="autoc"><ul></ul></div>
+		</div>
+		<div class="autoc filtered"><ul></ul></div>
 	</form>
+
 
 	<!-- <div class="form-signin">
 	<h2>Input Title</h2>

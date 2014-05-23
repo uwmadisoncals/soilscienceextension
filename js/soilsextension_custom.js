@@ -29,25 +29,7 @@ var headeroverlay_hght = function (){
 //turn off the autocomplete in these form fields
 $("#s, #autocomplete1, #yearAuthorField").attr("autocomplete","off");
 
-//for each of the matched elements,
 
-function isInAutoc(){
-
-var inAutoc = $(".autoc ul").text();
-
-if inAutoc == null{
-	alert( "inAutoc is null");
-	}else if{
-	alert( " something is in inAutoc");	
-	}else{
-	alert( " something else");	
-	}
-}
-
-
-setInterval(isInAutoc,3000);
-
-isInAutoc();
 
 headeroverlay_hght();
 
