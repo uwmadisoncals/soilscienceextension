@@ -59,8 +59,16 @@
 
 		   	//check current field value length and if returned json is empty. add/remove appropriate classes
 		   	if(!!input_length && !flag_emptyJson){
+		   			$("div.autoc.filtered").fadeIn(300);
   					$("div.autoc.filtered").addClass("notEmpty");
-  				}else{
+  				}else if(!input_length && !flag_emptyJson){
+  					//alert("there is no input length, and json is not empty");
+  					$("div.autoc.filtered").hide();
+  					$("div.autoc.filtered").fadeOut(300);
+  					$("div.autoc.filtered").removeClass("notEmpty");
+  				}
+
+  				else{
   					$("div.autoc.filtered").removeClass("notEmpty");
   				};
 
@@ -82,6 +90,11 @@
 		}); /*end ajax*/
   	}); /* end keyup */
   
+  $("#autocomplete1").blur(function(){
+  		$("div.autoc.filtered").fadeOut(300);
+  		//alert("onblur ws just called");
+  });
+
   if (ac_count ==0 ){
   	//alert("ac_count is : " + ac_count);
   };

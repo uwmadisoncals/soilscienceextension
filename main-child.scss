@@ -85,9 +85,21 @@ div.filtered {
 }
 
 div#ac_input_wrapper{
-	float:left;
+    width:300px;
+    margin: 0 auto;
+    padding-top:2%;
 }
 
 div.wcmc-search form#access{
-	width:75%;
+	width:550px;
+    height:50px;
+
+}
+
+div#ac_input_wrapper input#autocomplete1{
+    width:auto;
+}
+
+body.page-wcmc div#content{
+    overflow:visible;
 }

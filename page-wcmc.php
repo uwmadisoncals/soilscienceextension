@@ -95,10 +95,11 @@ get_header(); ?>
 				
 			</div><!-- #content -->
 			
-			<?php get_sidebar(); ?>
-			<div class="clear"></div>
+			
 			
 		</div><!-- #primary -->
+		<?php get_sidebar(); ?>
+			<div class="clear"></div>
 
 	</div>
 

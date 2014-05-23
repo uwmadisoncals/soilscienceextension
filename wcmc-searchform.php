@@ -62,7 +62,7 @@
 
 	
 	<p>Search all years by keyword:</p>
-	<form id="access" action="<?php echo site_url('/sr'); ?>" method="GET">
+	<form id="access" class="wcmc-form" action="<?php echo site_url('/sr'); ?>" method="GET">
 		<div id="ac_input_wrapper">
 		<input id="autocomplete1" type="text" value="" size="20" name="keyword">
 		<input id="autocomplete1_submit" type="submit" value="Go" name="submit">
