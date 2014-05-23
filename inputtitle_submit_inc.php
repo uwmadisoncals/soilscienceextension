@@ -69,6 +69,7 @@ function myajax_inputtitleSubmit_func() {
 	$response2 = json_encode( $customTerms );
 	$acInput_encoded = json_encode( $acInput );
 
+
  
 	// response output
 	header( "Content-Type: application/json" );

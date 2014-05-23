@@ -38,6 +38,8 @@
     background-image: -moz-linear-gradient(center top , #FFFFFF, #F1F1F1);
     text-shadow: 0 1px 0 #FFFFFF;
 }
+
+//applied via js when the field has characters in it
 div.notEmpty.filtered{
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #757575;
@@ -51,6 +53,11 @@ div.notEmpty.filtered{
     width: 236px;
     z-index: 4;
     display:initial;
+}
+
+//applied via js when the field has characters in it
+div.noMatches.filtered{
+    display:none;
 }
 
 /* #access ul */
@@ -72,7 +79,7 @@ div.notEmpty.filtered{
     padding: 0;
 }
 
-/* This style occurs when the form is empty and .notEmpty is not applied */
+/* applied via js when the field has no characters in it*/
 div.filtered {
     display: none;
 }

@@ -30,9 +30,9 @@
   $(document).ready(function(){
   	var ac_count = 0;
   	$('#autocomplete1').keyup(function(){
-  		var input_length = $("input[id='autocomplete1']").val().length;
-  		ac_count++;
   		var input= $('#autocomplete1').val();
+  		var input_length = $("input[id='autocomplete1']").val().length;
+  		var flag_emptyJson = false;
 
   		//alert(input);
   		$.ajax({
@@ -43,28 +43,30 @@
 		   	input : input,
 		   	nextNonce : PT_Ajax.nextNonce
 		   },
+		   // this function fires at each successful receipt of json object
 		   success: function(msg){
 		   	$(".autoc ul").html("");
-		   	//alert(msg[0]);
-		   	$.each(msg,function(key,value){
-		   		//alert(key+ ": "+value.slug);
-		   		//console.log(key+ ": "+value.slug);
-		   		$(".autoc ul").append("<li><a href='#'>"+value.slug+"</a></li>");
-		   		$("div.autoc.filtered").addClass("notEmpty");
 
+		   	//build the list of suggestions from the JSON objects returned
+		   	$.each(msg,function(key,value){
+		   		$(".autoc ul").append("<li><a href='#'>"+value.slug+"</a></li>");
 		   	});
 
-		   	if(!!input_length){
+		   	//if the json response is empty, flag it
+		   	if(msg.length===0){
+		   		flag_emptyJson =true;
+		   	}
+
+		   	//check current field value length and if returned json is empty. add/remove appropriate classes
+		   	if(!!input_length && !flag_emptyJson){
   					$("div.autoc.filtered").addClass("notEmpty");
   				}else{
   					$("div.autoc.filtered").removeClass("notEmpty");
   				};
 
-
-
-		   	$(".autoc ul li a").click(function(e) {
+  			//clicking on the list items, submits the form 
+		  	$(".autoc ul li a").click(function(e) {
 		   		e.preventDefault();
-
 		   		var searchstr = $(this).text();
 		   		//alert(searchstr);
 		   		$("#autocomplete1").val(searchstr);
@@ -73,20 +75,11 @@
 		   	});
 
 
+		   },
+		   error: function(){
+		   	alert("error thrown");
 		   }
 		}); /*end ajax*/
-  		/*if(!!$("input[id='autocomplete1']").val().length){
-  			alert($("input[id='autocomplete1']").val().length);
-  		}else{
-  			alert("failed test");
-  		}; */
-		if(ac_count>0){
-  		console.log("ac_count greater than zero and not null");
-  	}else if(ac_count==0){
-  		console.log("ac_count is zero");
-  	}else{
-  		console.log("something else");
-  	};
   	}); /* end keyup */
   
   if (ac_count ==0 ){
