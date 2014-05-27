@@ -102,7 +102,6 @@ get_header(); ?>
 			<div class="clear"></div>
 
 	</div>
-
 <?php get_footer(); ?>
 
 </div>
