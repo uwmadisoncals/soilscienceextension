@@ -13,6 +13,27 @@
 
 get_header(); ?>
 
+<?php include_once(ABSPATH . WPINC . '/feed.php');
+
+
+
+
+$rss = fetch_feed(array(
+	'http://www.npketc.info/?feed=rss2',
+	'http://ruarklab.soils.wisc.edu/?feed=rss2'	));
+
+if(! is_wp_error($rss)):
+
+	$maxitems=$rss->get_item_quantity(6);
+
+	$rss_items= $rss->get_items(0,$maxitems);
+
+	$rss->enable_order_by_date(true);
+endif;
+
+?>
+
+
 
   <div class="collegeFeature2">
   <?php if (function_exists( 'muneeb_ssp_slider')) {muneeb_ssp_slider( 109 );} ?>
@@ -128,7 +149,6 @@ if ( 'content' != $current_layout ) : ?>
 		
 			<div id="content" role="main">
 			<div id="container" style="opacity: 0;" class="super-list variable-sizes clearfix">
-
 
 
 		
@@ -371,4 +391,25 @@ echo $category[0]->slug; ?></div>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
+<ul>
+	<?php if($maxitems ==0): ?>
+		<li><?php _e('No items') ?></li>
+		<?php else: ?>
+			<?php  foreach ($rss_items as $item) : ?>
+				<li>
+					<a href="<?php echo esc_url($item->get_permalink() ); ?>" title="<?php printf( __('Posted %s'), $item->get_date('j F Y | g:i a')); ?>"><?php echo esc_html($item->get_title()); ?></a>
+					<p><?php  $rssArray[] = strtotime($item->get_date('Y-m-d H:i:s'));
+					arsort($rssArray);?>
+					</p>
+					<p><?php echo $rssArray; ?></p>
+				</li>
+			<?php endforeach; ?>
+
+	
+	<?php endif; ?>
+</ul>
+
+<?php logit( $rssArray, '$rssArray:' ); ?>
+<?php// logit( $sortd_rssArray, '$sortd_rssArray:' ); ?>
 <?php get_footer(); ?>

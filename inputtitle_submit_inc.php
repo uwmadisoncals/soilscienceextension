@@ -67,7 +67,7 @@ function myajax_inputtitleSubmit_func() {
 	$customTax = $wpdb->get_results($custTaxQuery); 
 	$customTerms = $wpdb->get_results($custTermQuery); 
 
-	//map the array of stdClass objects into an indexed array of integers, than implode it into a string
+	//map the array of stdClass objects into an indexed array of integers
 	$custTaxMapped = array_map(function($obj){ return $obj->term_id;}, $customTax);
 
 	// apply single quotes around each value
