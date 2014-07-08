@@ -19,8 +19,7 @@ get_header(); ?>
 
 
 $rss = fetch_feed(array(
-	'http://www.npketc.info/?feed=rss2',
-	'http://ruarklab.soils.wisc.edu/?feed=rss2'	));
+	'http://pipes.yahoo.com/pipes/pipe.run?_id=6bddd698689cecd033c421e03d44473d&_render=rss',	));
 
 if(! is_wp_error($rss)):
 
@@ -168,7 +167,7 @@ if ( 'content' != $current_layout ) : ?>
 					
 					
 					
-	<div class="newsItem <?php $category = get_the_category(); 
+	<div class="newsItem fakeClass <?php $category = get_the_category(); 
 echo $category[0]->slug; ?>">
     	
     		<div class="previousa">
@@ -391,25 +390,28 @@ echo $category[0]->slug; ?></div>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-
-<ul>
+<div class="rss_container">
 	<?php if($maxitems ==0): ?>
 		<li><?php _e('No items') ?></li>
 		<?php else: ?>
 			<?php  foreach ($rss_items as $item) : ?>
-				<li>
-					<a href="<?php echo esc_url($item->get_permalink() ); ?>" title="<?php printf( __('Posted %s'), $item->get_date('j F Y | g:i a')); ?>"><?php echo esc_html($item->get_title()); ?></a>
+				<div class="rss_item">
+					<a class="rss_feed" href="<?php echo esc_url($item->get_permalink() ); ?>" title="<?php printf( __('Posted %s'), $item->get_date('j F Y | g:i a')); ?>"><?php echo esc_html($item->get_title()); ?></a>
 					<p><?php  $rssArray[] = strtotime($item->get_date('Y-m-d H:i:s'));
 					arsort($rssArray);?>
 					</p>
-					<p><?php echo $rssArray; ?></p>
-				</li>
+					<p><?php /* print_r($rssArray); */?></p>
+					<p><?php /* print_r($item); */ ?></p>
+					<p><?php /*echo $item->get_description();  */?></p>
+					<p><?php echo shortenSimplePie($item->get_description(),150);  ?></p>
+				</div>
 			<?php endforeach; ?>
 
 	
 	<?php endif; ?>
-</ul>
+</div>
 
 <?php logit( $rssArray, '$rssArray:' ); ?>
-<?php// logit( $sortd_rssArray, '$sortd_rssArray:' ); ?>
+<?php /*logit( $rss_items, '$rss_items:');*/ ?>
+<?php /* logit( $sortd_rssArray, '$sortd_rssArray:'  ); */ ?>
 <?php get_footer(); ?>
