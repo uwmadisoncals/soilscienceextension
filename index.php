@@ -390,7 +390,7 @@ echo $category[0]->slug; ?></div>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<div class="rss_container">
+<div class="rss_container cf">
 	<?php if($maxitems ==0): ?>
 		<li><?php _e('No items') ?></li>
 		<?php else: ?>

@@ -7,6 +7,14 @@
   }
 }
 
+.cf:after{
+ content: "";
+    display: table;
+    clear: both;
+  
+}
+
+
 ////////////////////
 // page-wcmc.php  //
 ////////////////////
@@ -127,7 +135,7 @@ div.isotope-item{
 
     //the contaning div for all rss items
     div.rss_container {
-        background-color: #D2B48C;
+        //background-color: #D2B48C;
         margin: 0 auto;
         width: 100%;
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
