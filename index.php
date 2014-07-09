@@ -396,14 +396,17 @@ echo $category[0]->slug; ?></div>
 		<?php else: ?>
 			<?php  foreach ($rss_items as $item) : ?>
 				<div class="rss_item">
-					<a class="rss_feed" href="<?php echo esc_url($item->get_permalink() ); ?>" title="<?php printf( __('Posted %s'), $item->get_date('j F Y | g:i a')); ?>"><?php echo esc_html($item->get_title()); ?></a>
-					<p><?php  $rssArray[] = strtotime($item->get_date('Y-m-d H:i:s'));
-					arsort($rssArray);?>
-					</p>
-					<p><?php /* print_r($rssArray); */?></p>
-					<p><?php /* print_r($item); */ ?></p>
-					<p><?php /*echo $item->get_description();  */?></p>
-					<p><?php echo shortenSimplePie($item->get_description(),150);  ?></p>
+					<div class="rss_item_inner">
+					
+						<div class="rss_hyperlink"><a class="rss_feed" href="<?php echo esc_url($item->get_permalink() ); ?>" title="<?php printf( __('Posted %s'), $item->get_date('j F Y | g:i a')); ?>"><?php echo esc_html($item->get_title()); ?></a></div>
+						<!-- <p><?php  $rssArray[] = strtotime($item->get_date('Y-m-d H:i:s'));
+						arsort($rssArray);?> 
+						</p> -->
+						<div class="rss_date"><p><?php echo $item->get_date('l, F j, Y'); ?></p></div>
+						<?php /* print_r($item); */ ?>
+						<?php /*echo $item->get_description();  */?>
+						<div class="rss_desc"><img class="wrapReady" src="<?php echo get_stylesheet_directory_uri();?>/images/rss-circle_white.svg" height="200px" alt="circular rss orange logo"><?php echo shortenSimplePie($item->get_description(),150);  ?></div>
+					</div>
 				</div>
 			<?php endforeach; ?>
 

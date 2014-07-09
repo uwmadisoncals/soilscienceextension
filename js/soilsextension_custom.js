@@ -1,6 +1,9 @@
 $( document ).ready(function() {
 //alert("testing");
 
+
+
+
 /*if (typeof jQuery.ui !=='undefined'){
 	alert("JQuery UI loaded");
 }else{
@@ -28,6 +31,10 @@ var headeroverlay_hght = function (){
 
 //turn off the autocomplete in these form fields
 $("#s, #autocomplete1, #yearAuthorField").attr("autocomplete","off");
+
+//slickwrap
+
+$('.wrapReady').slickWrap();
 
 
 

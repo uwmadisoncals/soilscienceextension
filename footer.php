@@ -74,7 +74,6 @@ University of Wisconsin Foundation.</p>
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/min/master.notMiny.js"></script>
 
-
  <!-- <script type="text/javascript">
  	(function(){
  		alert('anonymous funtion test');
