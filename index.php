@@ -415,7 +415,7 @@ echo $category[0]->slug; ?></div>
 	<?php endif; ?>
 </div>
 
-<?php logit( $rssArray, '$rssArray:' ); ?>
+<?php /*logit( $rssArray, '$rssArray:' ); */?>
 <?php /*logit( $rss_items, '$rss_items:');*/ ?>
 <?php /* logit( $sortd_rssArray, '$sortd_rssArray:'  ); */ ?>
 <?php get_footer(); ?>
