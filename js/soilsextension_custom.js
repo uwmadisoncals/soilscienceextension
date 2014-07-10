@@ -33,8 +33,7 @@ var headeroverlay_hght = function (){
 $("#s, #autocomplete1, #yearAuthorField").attr("autocomplete","off");
 
 //slickwrap
-
-$('.wrapReady').slickWrap();
+//$('.wrapReady').slickWrap();
 
 
 

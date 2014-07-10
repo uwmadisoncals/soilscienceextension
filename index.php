@@ -390,6 +390,7 @@ echo $category[0]->slug; ?></div>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+<div class="rss_heading_wrapper"><h2 class="rss_heading">Recent Articles from our Extension Soil Scientists</h2></div>
 <div class="rss_container cf">
 	<?php if($maxitems ==0): ?>
 		<li><?php _e('No items') ?></li>
@@ -405,7 +406,7 @@ echo $category[0]->slug; ?></div>
 						<div class="rss_date"><p><?php echo $item->get_date('l, F j, Y'); ?></p></div>
 						<?php /* print_r($item); */ ?>
 						<?php /*echo $item->get_description();  */?>
-						<div class="rss_desc"><img class="wrapReady" src="<?php echo get_stylesheet_directory_uri();?>/images/rss-circle_white.svg" height="200px" alt="circular rss orange logo"><?php echo shortenSimplePie($item->get_description(),150);  ?></div>
+						<div class="rss_desc"><?php echo shortenSimplePie($item->get_description(),150);  ?></div>
 					</div>
 				</div>
 			<?php endforeach; ?>
