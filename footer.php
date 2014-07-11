@@ -21,9 +21,9 @@
             	<li class="quick_links_list">
                 	<?php wp_nav_menu( array( 'theme_location' => 'footer1' ) ); ?>
        	      </li>
-            	<li class="quick_links_list">
+            	<!-- <li class="quick_links_list">
                 	<?php wp_nav_menu( array( 'theme_location' => 'footer2' ) ); ?>
-            </li>
+            </li> -->
             	                              
             </ul>
             <div class="clearfix"></div>
