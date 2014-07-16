@@ -334,125 +334,123 @@ $pages = get_pages();
 
 
 <div class="headerPhotoBg">
-<div class="headertransition"></div>
-<div class="contrastmask1"></div>
+	<div class="headertransition"></div><!--END .headertransition-->
+	<div class="contrastmask1"></div><!-- END .contramask1 -->
 
-<div class="collegeFeature">
-<ul class="slides">
+	<div class="collegeFeature">
 
+		<ul class="slides">
 
-					<?php //get_template_part( 'content', 'page' ); ?>
+			<?php //get_template_part( 'content', 'page' ); ?>
 
-					<?php //comments_template( '', true ); ?>
-					
-					<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
-					$loop = new WP_Query( $args );
-					$loopcount = 0;
-					while ( $loop->have_posts() ) : $loop->the_post(); 
-					$loopcount = $loopcount + 1;
-					$slideclass = "slideImage".$loopcount;
-					$slideblurclass = "slideBlur".$loopcount;
-					?>
-					
-					
-    			
-    				<li class="flipin">
-    					<canvas id="canvas"></canvas>
-    					<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
-				    					
-					    				if ( has_post_thumbnail() ) {
-						    				
-						    				//the_post_thumbnail();
-						    				//echo get_the_post_thumbnail($page->ID, 'large');
-						    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
-$url = $thumb['0']; echo $url;
-				 
-						    				} else {
-				 
-											 //echo '<img src="';
-											 //echo catch_that_image();
-											// echo '" alt="" />';
-				
-										}
-					    				
-				    				?>') no-repeat; background-size: 100% auto;">
-				    				
-				    				<div class="headerBgContainer"><div class="headerbgBlur"><div class="headerbgBlurImage"></div></div></div>					
-				    				<div class="slideBlurImage"></div>
-				    				
-				    				
-				    				<div class="slideBlur <?php echo $slideblurclass ?>"></div>
-				    				<div class="contrastmask2"></div>
-    					</div>
-    					
-    					
-				    			
-				    		
-    			
-    			
-  	
-  		
-  			<div class="featureCaption">
-  				<div class="centered">
-  				<h2><?php the_title(); ?></h2>
-  				
-	  				<div class="featuresubtitle">
-	  				<?php the_content(); ?>
-	  				</div>
-  				</div>
-  			</div>
-  			
-  		</li>
-  					
-  	
-					<?php endwhile; ?>
-				
-					
-
-				
-				
-				</ul>
-  	
-  	<a href="#" class="next">Next</a>
-  	<a href="#" class="previous">Previous</a>
-  	
-  	<div class="timer">
-  		<a href="#">Pause Slide Rotation</a>
-	  	<div class="timerLeft">
-	  	<div class="timer1"></div>
-	  	</div>
-	  	<div class="timerRight">
-	  	<div class="timer2"></div>
-	  	</div>
-	  	
-  	</div>
-  </div>
-  <div class='fluidHeight' style="display: none;">
+			<?php //comments_template( '', true ); ?>
 			
-			<div class = 'sliderContainer'>
+			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
+			$loop = new WP_Query( $args );
+			$loopcount = 0;
+			while ( $loop->have_posts() ) : $loop->the_post(); 
+			$loopcount = $loopcount + 1;
+			$slideclass = "slideImage".$loopcount;
+			$slideblurclass = "slideBlur".$loopcount;
+			?>
+
+			<li class="flipin">
+				<canvas id="canvas"></canvas>
+				<div class="slideImage <?php echo $slideclass ?>" style="background: url('<?php 
+		    					
+			    				if ( has_post_thumbnail() ) {
+				    				
+				    				//the_post_thumbnail();
+				    				//echo get_the_post_thumbnail($page->ID, 'large');
+				    				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'large' );
+									$url = $thumb['0']; echo $url;
+		 
+				    				} else {
+		 
+									 //echo '<img src="';
+									 //echo catch_that_image();
+									// echo '" alt="" />';
+								}
+			    				
+		    				?>') no-repeat; background-size: 100% auto;">
+		    				
+					<div class="headerBgContainer">
+
+						<div class="headerbgBlur">
+
+							<div class="headerbgBlurImage"></div>
+
+						</div><!-- END .headerbgBlur-->
+
+					</div><!--END .headerBGContainer -->
+
+		    		<div class="slideBlurImage"></div>
+		    					
+		    		<div class="slideBlur <?php echo $slideblurclass ?>"></div>
+
+		    		<div class="contrastmask2"></div>
+
+				</div><!-- END .slideimage -->
 			
-				<div class = 'iosSlider'>
-				
-					<div class = 'slider'>
-					
-						
-						
-						
-					
-					</div>
-				
-				</div>
-				
-				
-				
-				<div class = 'scrollbarContainer'></div>
-				
+				<div class="featureCaption">
+
+					<div class="centered">
+
+						<h2><?php the_title(); ?></h2>
+
+						<div class="featuresubtitle">
+
+							<?php the_content(); ?>
+
+						</div><!--END .featuresubtitle -->
+
+					</div><!-- END .centered -->
+
+				</div><!--END .featureCaption -->
+
+			</li><!-- END li.flippin -->
+		  					
+			<?php endwhile; ?>
+									
+		</ul><!-- END ul.slides ? -->
+		  	
+		<a href="#" class="next">Next</a>
+		<a href="#" class="previous">Previous</a>
+		  	
+		<div class="timer">
+
+			<a href="#">Pause Slide Rotation</a>
+
+			<div class="timerLeft">
+				<div class="timer1"></div>
+			</div>
+
+			<div class="timerRight">
+				<div class="timer2"></div>
 			</div>
 			
+		</div><!--END .timer -->
+
+	</div><!--END college feature -->
+
+	<div class='fluidHeight' style="display: none;">
+				
+		<div class = 'sliderContainer'>
 		
-		</div>
-		<div class="headershade"></div>
-		<!-- end of feature slider -->
+			<div class = 'iosSlider'>
+			
+				<div class = 'slider'>
+				</div><!-- END .slider-->
+			
+			</div><!-- END .iosSlider-->
+			
+			<div class = 'scrollbarContainer'></div><!-- END .scrollbarContainer-->
+			
+		</div><!-- END .sliderContainer-->
+				
+	</div><!-- END .fluidHeight-->
+
+	<div class="headershade"></div><!-- END .headershade -->
 		
-</div>
+</div><!-- END .headerPhotoBg-->
 	
