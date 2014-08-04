@@ -185,8 +185,8 @@ div.rss_heading_wrapper{
                         font-size: 1.2em;
                         font-weight:bold;
                         color:#373737;
-                        word-break:break-all;
-                        -moz-hyphens: auto;
+                        word-break:initial;
+                        -moz-hyphens:none;
                         &:hover{
                             color:#FFFFFF;
                         }
@@ -218,4 +218,26 @@ div.rss_heading_wrapper{
 // add extra padding to primary container
 body.home.blog #primary{
     padding-bottom:70px;
+}
+
+//page-faculty-and-staff.php
+
+body.page-faculty-and-staff div.faculty_wrapper {
+    margin-bottom: 2%;
+    div.faculty_photo{
+        float:left;
+    }
+    div.faculty_info{
+        float:left;
+        margin-left:2%;
+        li{
+            list-style-type: none;
+            a.faculty_name{
+                font-size:1.5em;
+            }
+            span{
+                font-weight: bold;
+            }
+        }
+    }
 }
