@@ -46,9 +46,9 @@ get_header(); ?>
 
 							<div class="faculty_info">
 								<li>
-									<a class="faculty_name" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									<a class="faculty_name" href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><?php the_title(); ?></a>
 								</li>
-
+								
 								<li>
 									<span>Department: </span><?php the_field( "department" ); ?>
 								</li>
