@@ -41,7 +41,7 @@ get_header(); ?>
 					$image = get_field('photo');
 					?> <div class="faculty_wrapper">
 							<div class='faculty_photo'>
-								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<a href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
 							</div>
 
 							<div class="faculty_info">
