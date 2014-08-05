@@ -294,3 +294,36 @@ body.search div#content {
     width:100%;
 }
 
+////////////////////
+//single-wcmc.php //
+////////////////////
+
+  //Content-wcmc.php
+  
+  body.single-wcmc div.paper{
+    float:left;
+    margin: 20px 20px 20px 0;
+
+    div.wcmc-paper-icon{
+        float:left;
+    }
+
+    div.wcmc-paper-name{
+        float:left;
+        width:100%;
+        text-align: center;
+    }
+
+  }
+
+  body.single-wcmc div.ppoint{
+    float:left;
+    margin: 20px 20px 20px 0;
+    
+    div.wcmc-ppoint-icon{
+      float:left;
+    }
+    div.wcmc-ppoint-name{
+       @extend .wcmc-paper-name;
+    }
+  }

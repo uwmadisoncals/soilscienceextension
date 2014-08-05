@@ -6,7 +6,6 @@
  * @since CALS 1.0
  */
 ?>
-	<div class="wcmc-single-author"> <?php the_field("author_name1") ?></div>
 
 	<?php $the_paper = get_field('paper');
 	      	$the_paper_url = $the_paper['url'];
@@ -29,9 +28,10 @@
 						<?php } ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<div class="wcmc-single-author"> <h3><?php the_field("author_name1") ?></h3></div>
 
 
-			<div class="paper">
+	<div class="paper">
 		<!-- Display the paper PDF Hyperlink icon-->
 		<div class="wcmc-paper-icon">
 			<?php  if( $the_paper_url ){  ?>
@@ -44,11 +44,13 @@
 
 			<?php   }; ?>
 		</div>
+		<div class="cf"></div>
 
 		<!-- Display the paper caption -->
 		<div class="wcmc-paper-name">
-			<a href="<?php echo $the_paper_url ?>">View the paper pdf</a>
+			<a href="<?php echo $the_paper_url ?>">View the paper</a>
 		</div>
+		<div class="cf"></div>
 	</div>
 
 
@@ -66,11 +68,13 @@
 
 			<?php   }; ?>
 		</div>
+		<div class="cf"></div>
 
 		<!-- Display the powerpoint caption -->
 		<div class="wcmc-ppoint-name">
-			<a href="<?php echo $the_ppoint_url ?>">View the powerpoint pdf</a>
+			<a href="<?php echo $the_ppoint_url ?>">View the powerpoint</a>
 		</div>
+		<div class="cf"></div>
 	</div>
 
 
