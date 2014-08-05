@@ -1,5 +1,6 @@
 <?php
 /**
+ *
  * The Sidebar containing the main widget area.
  * @package WordPress
  * @subpackage CALSv1
@@ -58,16 +59,18 @@ if ( 'content' != $current_layout ) :
 			cals_uw_directory_search($small=true, $add_class = 'search_results_side');
 			}
 			else{
-				exit;
+				//exit;
 			}
 			?>
 		
 		
 		
 		<!-- SEARCH FORM -->
+		<?php /*
 <div class="googleSearch">
 <h4>Google Found</h4>
 <form action="http://www.google.com/search" method="get">
+
 <!-- HTML5 SEARCH BOX!  -->
 <input type="search" id="search-box" name="q" results="5" autocomplete="on" />
 <!-- SEARCH BUTTON -->
@@ -80,64 +83,10 @@ if ( 'content' != $current_layout ) :
 </div>
  
 </form>
-</div>
+</div> */?>
 
 </div>
 
-<script type="text/javascript">
-google.load("search","1");
-//google.load("jquery", 1.7.2);
- 
-function googlesearch() {
-//console.log("hi");
-    if(typeof(searchLoaded) == "undefined") {
-        var searchLoaded = true; // set searchLoaded to "true"; no more loading!
- 
-        var searchBox = $("input#search-box");
- 
-        // google interaction
-        var search = new google.search.WebSearch(),
-        control = new google.search.SearchControl(),
-        options = new google.search.DrawOptions();
- 
-        // set google options
-        options.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
-        options.setInput(searchBox);
-        search.setSiteRestriction("http://www.cals.wisc.edu");
-		//options.as_sitesearch("http://www.cals.wisc.edu");
-        // set search options
-        search.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
- 
-        // set search controls
-        control.addSearcher(search);
-        control.draw(document.getElementById("search-results-content"),options);
-        control.setNoResultsString("No results were found.");
- 
-        // add listeners to search box
-        searchBox.bind("keydown", function() {
-        	//console.log("hi");
-            var value = searchBox.val();
-            if(value) {
-                control.execute(value);
-            }
-        });
-        
-        
-        var searchBox2 = $("#s");
-			//var control = new google.search.SearchControl();
-			var value2 = searchBox2.val();
-			
-            if(value2) {
-            	searchBox.val(value2);
-            	//console.log("searching");
-                control.execute(value2);
-            }	
-            
-            
-    }
-}
-google.setOnLoadCallback(googlesearch);
-</script>
 		
 	 <?php } else {  ?>
 			
