@@ -8,6 +8,7 @@
 	<form role="search" class="wcmc-form" action="<?php echo site_url('/sr'); ?>" method="GET" name="yearsubject">
 
 		<select id="yearselect" class="yearselect" name="yr">
+			<option value="2014" name="yr">2014</option>
 			<option value="2013" name="yr">2013</option>
 			<option value="2012" name="yr">2012</option>
 			<option value="2011" name="yr">2011</option>
@@ -43,6 +44,7 @@
 	<p>Search by year and author:</p>
 	<form role="search" class="wcmc-form" action="<?php echo site_url('/sr'); ?>" method="GET" name="authorsearch">
 		<select class="yearselect" name="yr">
+			<option value="2014" name="yr">2014</option>
 			<option value="2013" name="yr">2013</option>
 			<option value="2012" name="yr">2012</option>
 			<option value="2011" name="yr">2011</option>
