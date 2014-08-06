@@ -28,7 +28,17 @@
 						<?php } ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<div class="wcmc-single-author"> <h3><?php the_field("author_name1") ?></h3></div>
+		<div class="wcmc-author-date"> <span>By: <?php the_field("author_name1") ?> , 
+
+
+			<?php
+			$date = DateTime::createFromFormat('Ymd', get_field('date'));
+			echo $date->format('m/d/Y');
+			?></span>
+			
+		  
+
+		 </div>
 
 
 	<div class="paper">
@@ -36,7 +46,7 @@
 		<div class="wcmc-paper-icon">
 			<?php  if( $the_paper_url ){  ?>
 
-			<a href="<?php echo $the_paper_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="25%"></a>
+			<a href="<?php echo $the_paper_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
 			
 			<?php } else { ?>
 
@@ -60,7 +70,7 @@
 		<div class="wcmc-ppoint-icon">
 			<?php  if( $the_ppoint_url ){  ?>
 
-			<a href="<?php echo $the_ppoint_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="25%"></a>
+			<a href="<?php echo $the_ppoint_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
 			
 			<?php } else { ?>
 

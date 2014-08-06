@@ -300,12 +300,23 @@ body.search div#content {
 
   //Content-wcmc.php
   
+  body.single-wcmc div.wcmc-author-date span{
+    display: block;
+    margin: .5em;
+    font-size: 1.2em;
+  }
+
   body.single-wcmc div.paper{
     float:left;
     margin: 20px 20px 20px 0;
 
     div.wcmc-paper-icon{
         float:left;
+        height:90px;
+        a img{
+        display: block;
+        margin: 0 auto;
+        }
     }
 
     div.wcmc-paper-name{
@@ -321,7 +332,11 @@ body.search div#content {
     margin: 20px 20px 20px 0;
     
     div.wcmc-ppoint-icon{
-      float:left;
+      @extend .wcmc-paper-icon;
+      a img{
+        display: block;
+        margin: 0 auto;
+        }
     }
     div.wcmc-ppoint-name{
        @extend .wcmc-paper-name;
