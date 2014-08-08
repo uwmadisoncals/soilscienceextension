@@ -18,6 +18,9 @@ $gets =array("year"=> $_GET["yr"],"subject"=> $_GET["subject"], "author"=>$_GET[
 //creates an array, for later use.
 $arr=array();
 
+// A sort of lookup table for dates
+
+
 //accepts $gets array filters out unset values, updates $arr
 foreach ($gets as $key=>$val){
 	if(isset($val)){
@@ -38,7 +41,7 @@ foreach ($gets as $key=>$val){
 									'relation' => 'AND',
 											array(
 												'key' => 'date', //gets ACF value assoc with 'date'
-												'compare' => '=',
+												'compare' => 'BETWEEN',
 												'value' => $year // gets value from $arr, which gets value from dropdown
 												),
 											array(
@@ -111,6 +114,7 @@ foreach ($gets as $key=>$val){
 
 		<div id="primary">
 			<div id="content" role="main">
+
 				<?php
 
 				// args
@@ -126,9 +130,11 @@ foreach ($gets as $key=>$val){
 				 
 				// The Loop
 				?>
+				<?php //logit( $the_query->request, '$the_query->request:' ); ?>
 				<?php if( $the_query->have_posts() ): ?>
 					<ul>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
 						<li>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
@@ -149,6 +155,18 @@ foreach ($gets as $key=>$val){
 
 
 	<?php
+	$myDate = new DateTime('20140101');
+
+	$DateTimestamp = $myDate->getTimestamp();
+
+	logit($myDate, '$myDate');
+	logit($DateTimestamp, '$DateTimestamp');
+
+	logit( $gets, '$gets:' );
+	logit( $arr, '$arr:' );
+	logit( $kywd, '$kywd:' );
+	logit( $args, '$args:' );
+
 	//############################################
 	//#############    FIREPHP  ##################
  	/*

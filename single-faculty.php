@@ -41,7 +41,6 @@ get_header(); ?>
 					<ul>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 					$image = get_field('photo');
-
 					?> 
 
 					<div class="faculty_wrapper">
@@ -50,13 +49,13 @@ get_header(); ?>
 							</div>
 							<div class="faculty_info">
 								<h2><?php the_title(); ?></h2>
-								<li><span>Title: </span><?php the_field( 'professional_title' ); ?></li>
-								<li><span>Department: </span><?php the_field( 'department' ); ?></li>
-								<li><span>Education: </span><?php the_field( 'education' ); ?></li>
-								<li><span>Address: </span><?php the_field( 'address' ); ?></li>
-								<li><span>Email: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a></li>
-								<li><span>Phone: </span><?php the_field( 'phone' ); ?></li>
-								<li><span>Fax: </span><?php the_field( 'fax' ); ?></li>
+								<li><span><?php echo get_field_object('professional_title')['label']; ?>: </span><?php the_field( 'professional_title' ); ?></li>
+								<li><span><?php echo get_field_object('department')['label']; ?>: </span><?php the_field( 'department' ); ?></li>
+								<li><span><?php echo get_field_object('education')['label']; ?>: </span><?php the_field( 'education' ); ?></li>
+								<li><span><?php echo get_field_object('address')['label']; ?>: </span><?php the_field( 'address' ); ?></li>
+								<li><span><?php echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a></li>
+								<li><span><?php echo get_field_object('phone')['label']; ?>: </span><?php the_field( 'phone' ); ?></li>
+								<li><span><?php echo get_field_object('fax')['label']; ?>: </span><?php the_field( 'fax' ); ?></li>
 							</div>
 							<div class="cf"></div>
 							<div class="detail_info">

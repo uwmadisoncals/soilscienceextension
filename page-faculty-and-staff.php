@@ -50,15 +50,15 @@ get_header(); ?>
 								</li>
 								
 								<li>
-									<span>Department: </span><?php the_field( "department" ); ?>
+									<span><?php echo get_field_object('department')['label']; ?>: </span><?php the_field( "department" ); ?>
 								</li>
 
 								<li>
-									<span>Email: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>
+									<span><?php echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>
 								</li>
 
 								<li>
-									<span>Phone: </span><?php the_field( "phone" ); ?>
+									<span<?php echo get_field_object('phone')['label']; ?>: </span><?php the_field( "phone" ); ?>
 								</li>
 							</div>
 							<div class="cf"></div>
