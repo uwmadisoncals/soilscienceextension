@@ -155,6 +155,7 @@ foreach ($gets as $key=>$val){
 
 
 	<?php
+	/*
 	$myDate = new DateTime('20140101');
 
 	$DateTimestamp = $myDate->getTimestamp();
@@ -166,6 +167,7 @@ foreach ($gets as $key=>$val){
 	logit( $arr, '$arr:' );
 	logit( $kywd, '$kywd:' );
 	logit( $args, '$args:' );
+	*/
 
 	//############################################
 	//#############    FIREPHP  ##################
