@@ -50,15 +50,40 @@ get_header(); ?>
 								</li>
 								
 								<li>
-									<span><?php echo get_field_object('department')['label']; ?>: </span><?php the_field( "department" ); ?>
+									<span><?php 
+									$get_FO_dept = get_field_object('department');
+									//logit( $get_FO_dept, '$get_FO_dept:' );
+									$dept_label = $get_FO_dept['label'];
+									//logit( $dept_label, '$dept_label:' );
+									/* echo get_field_object('department')['label']; ?>: </span><?php the_field( "department" ); */
+									echo $dept_label; ?>: </span><?php the_field( "department" ); ?>
 								</li>
 
 								<li>
-									<span><?php echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>
+									<span><?php 
+									$get_FO_email = get_field_object('email');
+									$email_label = $get_FO_email['label'];
+
+
+									 /* echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a> */
+
+									echo $email_label ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>
+
+
 								</li>
 
 								<li>
-									<span<?php echo get_field_object('phone')['label']; ?>: </span><?php the_field( "phone" ); ?>
+									<span><?php 
+									$get_FO_phone = get_field_object('phone');
+									$phone_label = $get_FO_phone['label'];
+
+									//logit( $get_FO_phone, '$get_FO_phone:' );
+									//logit( $phone_label, '$phone_label:' );
+									
+									/* echo get_field_object('phone')['label']; ?>: </span><?php the_field( "phone" ); ?> */
+
+									echo $phone_label; ?>: </span><?php the_field( "phone" ); ?>
+
 								</li>
 							</div>
 							<div class="cf"></div>
