@@ -49,13 +49,35 @@ get_header(); ?>
 							</div>
 							<div class="faculty_info">
 								<h2><?php the_title(); ?></h2>
-								<li><span><?php echo get_field_object('professional_title')['label']; ?>: </span><?php the_field( 'professional_title' ); ?></li>
-								<li><span><?php echo get_field_object('department')['label']; ?>: </span><?php the_field( 'department' ); ?></li>
-								<li><span><?php echo get_field_object('education')['label']; ?>: </span><?php the_field( 'education' ); ?></li>
-								<li><span><?php echo get_field_object('address')['label']; ?>: </span><?php the_field( 'address' ); ?></li>
-								<li><span><?php echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a></li>
-								<li><span><?php echo get_field_object('phone')['label']; ?>: </span><?php the_field( 'phone' ); ?></li>
-								<li><span><?php echo get_field_object('fax')['label']; ?>: </span><?php the_field( 'fax' ); ?></li>
+								<?php
+									//GET THE FIELD OBJECTS
+									$get_FO_proTitle = get_field_object('professional_title'); 
+									$get_FO_dept = get_field_object('department');
+									$get_FO_edu = get_field_object('education');
+									$get_FO_address = get_field_object('address');
+									$get_FO_email = get_field_object('email');
+									$get_FO_phone = get_field_object('phone');
+									$get_FO_fax = get_field_object('fax');
+
+									//GET THE LABELS FOR EACH FIELD OBJECT
+									$proTitle_label = $get_FO_proTitle['label'];
+									$dept_label = $get_FO_dept['label'];
+									$edu_label = $get_FO_edu['label'];
+									$address_label = $get_FO_address['label'];
+									$email_label = $get_FO_email['label'];
+									$phone_label = $get_FO_phone['label'];
+									$fax_label = $get_FO_fax['label'];
+
+								 ?>
+								
+								<li><span><?php echo $proTitle_label; ?>: </span><?php the_field( 'professional_title' ); ?></li>
+								<li><span><?php echo $dept_label; ?>: </span><?php the_field( 'department' ); ?></li>
+								<li><span><?php echo $edu_label; ?>: </span><?php the_field( 'education' ); ?></li>
+								<li><span><?php echo $address_label; ?>: </span><?php the_field( 'address' ); ?></li>
+								<li><span><?php echo $email_label; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a></li>
+								<li><span><?php echo $phone_label; ?>: </span><?php the_field( 'phone' ); ?></li>
+								<li><span><?php echo $fax_label; ?>: </span><?php the_field( 'fax' ); ?></li>
+
 							</div>
 							<div class="cf"></div>
 							<div class="detail_info">
