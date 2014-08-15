@@ -5,7 +5,7 @@
 
     <p>Search by year and subject:</p>
 
-	<form role="search" class="wcmc-form" action="<?php echo site_url('/sr'); ?>" method="GET" name="yearsubject">
+	<form role="search" class="wcmc-form" action="<?php echo site_url('/sr2'); ?>" method="GET" name="yearsubject">
 
 		<select id="yearselect" class="yearselect" name="yr">
 			<option value="2014" name="yr">2014</option>
