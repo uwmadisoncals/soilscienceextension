@@ -18,8 +18,16 @@ $gets =array("year"=> $_GET["yr"],"subject"=> $_GET["subject"], "author"=>$_GET[
 //creates an array, for later use.
 $arr=array();
 
-// A sort of lookup table for dates
 
+// Variables related to Date comparison
+				$year = $arr["year"];
+				$dateString_start = $year.'0101'; 
+				$dateTimeObj_start = new DateTime($dateString_start);
+				$timestamp_start = $dateTimeObj_start->getTimestamp();
+				
+				$dateString_end = $year.'1231';
+				$dateTimeObj_end = new DateTime($dateString_end);
+				$timestamp_end = $dateTimeObj_end->getTimestamp();
 
 //accepts $gets array filters out unset values, updates $arr
 foreach ($gets as $key=>$val){
@@ -30,8 +38,9 @@ foreach ($gets as $key=>$val){
 
 	switch($arr){
 		case (isset($arr["year"]) && isset($arr["subject"])):
-				//print_r("year and author");
-				$year=intval($arr["year"]);
+				$searchType ="year and subject";
+				//$year=intval($arr["year"]);
+			
 				$subj=$arr["subject"];
 
 					$args = array(
@@ -42,7 +51,8 @@ foreach ($gets as $key=>$val){
 											array(
 												'key' => 'date', //gets ACF value assoc with 'date'
 												'compare' => 'BETWEEN',
-												'value' => $year // gets value from $arr, which gets value from dropdown
+												//'value' => $year // gets value from $arr, which gets value from dropdown
+												'meta_value' => array($timestamp_start, $timestamp_end)
 												),
 											array(
 												'key' => 'subject',
@@ -54,6 +64,8 @@ foreach ($gets as $key=>$val){
 		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
+		$searchType ="year and author";
+
 		$year=intval($arr["year"]);
 		$author=$arr["author"];
 
@@ -78,6 +90,8 @@ foreach ($gets as $key=>$val){
 		break;
 
 		case (isset($arr["keyword"])):
+		$searchType ="keyword";
+
 		$kywd=strtolower($arr["keyword"]);
 		$getTerms = get_terms('wcmc_keywords','hide_empty=0');
 		//$name_getTerms = $getTerms->name;
@@ -142,7 +156,7 @@ foreach ($gets as $key=>$val){
 					<p>sorry no results are available.</p>
 					</ul>
 				<?php endif; ?>
-				 
+				 <?php logit( $wp_query, '$wp_query:' ); ?>
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 
 			</div><!-- #content -->
@@ -155,19 +169,32 @@ foreach ($gets as $key=>$val){
 
 
 	<?php
-	/*
-	$myDate = new DateTime('20140101');
+	//logit( $year, '$year:' );
+	//( $dateString_start, '$dateString_start:' );
+	//logit( $dateTimeObj_start, '$dateTimeObj_start:' );
+	//logit( $timestamp_start, '$timestamp_start:' );
 
-	$DateTimestamp = $myDate->getTimestamp();
+	//logit( $dateString_end, '$dateString_end:' );
+	//logit( $dateTimeObj_end, '$dateTimeObj_end:' );
+	//logit( $timestamp_end, '$timestamp_end:' );
 
-	logit($myDate, '$myDate');
-	logit($DateTimestamp, '$DateTimestamp');
+
+	//$myDate = new DateTime('20140101');
+
+	//$myDateFormat = DateTime::createFromFormat('j-M-Y', '24-Mar-2013');
+
+	//$DateTimestamp = $myDate->getTimestamp();
+
+	//logit($myDate, '$myDate');
+	//logit($myDateFormat,'$myDateFormat');
+	//logit($DateTimestamp, '$DateTimestamp');
 
 	logit( $gets, '$gets:' );
 	logit( $arr, '$arr:' );
 	logit( $kywd, '$kywd:' );
 	logit( $args, '$args:' );
-	*/
+
+	
 
 	//############################################
 	//#############    FIREPHP  ##################
