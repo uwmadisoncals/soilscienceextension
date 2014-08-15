@@ -47,3 +47,33 @@ function shortenSimplePie($string, $length){
 
 	return $desc;
 }
+
+
+add_action('pre_get_posts', 'page_sr2_pgp');
+
+function page_sr2_pgp( $query )
+{
+	// validate
+	if( is_page('sr2') )
+	{
+		return $query;
+
+	}
+	global $variable;
+	$variable ="something";
+	logit( $variable, '$variable: ');
+    // allow the url to alter the query
+    // eg: http://www.website.com/events?location=melbourne
+    // eg: http://www.website.com/events?location=sydney
+    if( isset($_GET['yr']) )
+    {
+
+    	$query->set('meta_key', 'yr');
+    	$query->set('meta_value', $_GET['year']);
+
+    }   
+
+	// always return
+	return $query;
+
+}
