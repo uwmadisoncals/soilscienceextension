@@ -25,10 +25,7 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 
 					<?php get_template_part('nav_menu', 'explore');?>
-
-				<?php logit( $wp_query, '$wp_query:' ); ?>
-				<?php logit( $variable, '$variable: '); ?>
-				<?php var_dump($variable); ?>
+			
 				<?php endwhile; // end of the loop. ?>
 				
 			</div><!-- #content -->
