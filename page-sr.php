@@ -78,12 +78,12 @@ if(have_posts()) :
 	<?php 
 	endif;
 
-	logit( $posts_getWCMC, '$posts_getWCMC:');
-	logit( $arrID, '$arrID:');
-	logit( $arrID_date, '$arrID_date:');
-	logit( $year, '$year:');
-	logit( $arrID_year, '$arrID_year:');
-	logit( $matchesDate, '$matchesDate:');
+	//logit( $posts_getWCMC, '$posts_getWCMC:');
+	//logit( $arrID, '$arrID:');
+	//logit( $arrID_date, '$arrID_date:');
+	//logit( $year, '$year:');
+	//logit( $arrID_year, '$arrID_year:');
+	//logit( $matchesDate, '$matchesDate:');
 
 
 
@@ -187,7 +187,7 @@ if(have_posts()) :
 					<p>sorry no results are available.</p>
 					</ul>
 				<?php endif; ?>
-				 <?php logit( $wp_query, '$wp_query:' ); ?>
+				 <?php //logit( $wp_query, '$wp_query:' ); ?>
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 
 			</div><!-- #content -->
@@ -220,10 +220,10 @@ if(have_posts()) :
 	//logit($myDateFormat,'$myDateFormat');
 	//logit($DateTimestamp, '$DateTimestamp');
 
-	logit( $gets, '$gets:' );
-	logit( $arr, '$arr:' );
-	logit( $kywd, '$kywd:' );
-	logit( $args, '$args:' );
+	//logit( $gets, '$gets:' );
+	//logit( $arr, '$arr:' );
+	//logit( $kywd, '$kywd:' );
+	//logit( $args, '$args:' );
  ?>
 
 <?php get_footer(); ?>
