@@ -12,12 +12,22 @@
  */
 
 get_header(); 
-
 //maps the raw $_GET data to array
 $gets =array("year"=> $_GET["yr"],"subject"=> $_GET["subject"], "author"=>$_GET["auth"], "keyword"=> $_GET["keyword"]);
 
 //creates an array, for later use.
 $arr=array();
+
+
+// Variables related to Date comparison
+				$year = $arr["year"];
+				$dateString_start = $year.'0101'; 
+				$dateTimeObj_start = new DateTime($dateString_start);
+				$timestamp_start = $dateTimeObj_start->getTimestamp();
+				
+				$dateString_end = $year.'1231';
+				$dateTimeObj_end = new DateTime($dateString_end);
+				$timestamp_end = $dateTimeObj_end->getTimestamp();
 
 //accepts $gets array filters out unset values, updates $arr
 foreach ($gets as $key=>$val){
@@ -25,87 +35,36 @@ foreach ($gets as $key=>$val){
 		$arr[$key]=$val;
 	}
 }
-//get year value from $arr
-$year = $arr["year"];
-
-
-/////////////////////////////
-//The GetWCMC loop         //
-/////////////////////////////
-
-if(have_posts()) : 
-
-	$args_getWCMC = array('post_type' =>'wcmc','posts_per_page'=>-1); //define query args
-
-	$getWCMC = new WP_Query($args_getWCMC); //instantiate query object
-
-	$posts_getWCMC = $getWCMC->get_posts(); //get just the posts from this query object
-
-	$arrID = array(); //create empty array
-
-	foreach($posts_getWCMC as $post){ //create an indexed array of all post id's of custom post type 'wcmc' 
-		$arrID[] += $post->ID;
-	}
-
-	$arrID_date = array(); //create empty array
-
-	foreach ($arrID as $index => $ID) { //create associateive array where key is "id" and value is 'yymmdd date format'
-		$arrID_date[$ID] += get_field('date', $ID); 
-	}
-
-	$arrID_year = array(); //make new empty array
-
-	foreach ($arrID_date as $id => $date) {
-		$str = substr($date, 0, 4); //truncate yymmdd into just the year
-			if($year == $str){
-				$arrID_year[$id] += $str; //create array showing only data that matches user input for year
-			}
-		}
-
-	$matchesDate = array(); //make new empty array
-
-	foreach ($arrID_year as $key => $value) { //list only the ID's of the posts that match the year
-		$matchesDate[] += $key;
-	}
-
-	while($getWCMC->have_posts()): $getWCMC->the_post(); ?>
-	<?php
-	endwhile;
-	wp_reset_postdata(); //reset post data
-	else : ?>
-	<p>sorry no results are available...on post object $getWCMC</p>
-
-	<?php 
-	endif;
-
-	logit( $posts_getWCMC, '$posts_getWCMC:');
-	logit( $arrID, '$arrID:');
-	logit( $arrID_date, '$arrID_date:');
-	logit( $year, '$year:');
-	logit( $arrID_year, '$arrID_year:');
-	logit( $matchesDate, '$matchesDate:');
-
-
-
-/////////////////////////////
-// END GetWCMC loop        //
-/////////////////////////////
 
 	switch($arr){
 		case (isset($arr["year"]) && isset($arr["subject"])):
+				$searchType ="year and subject";
+				//$year=intval($arr["year"]);
+			
 				$subj=$arr["subject"];
 
 					$args = array(
 			'numberposts' => -1,
 			'post_type' => 'wcmc',
-			'meta_key'=>'subject',
-			'meta_value'=>$subj,
-			'post__in'=>$matchesDate // In here should go an array of just post ids
-			); 
-
+			'meta_query' => array(
+									'relation' => 'AND',
+											array(
+												'key' => 'date', //gets ACF value assoc with 'date'
+												'compare' => 'BETWEEN',
+												//'value' => $year // gets value from $arr, which gets value from dropdown
+												'meta_value' => array($timestamp_start, $timestamp_end)
+												),
+											array(
+												'key' => 'subject',
+												'value' => $subj,
+												'compare' => '='
+											)
+								)
+				); 
 		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
+		$searchType ="year and author";
 
 		$year=intval($arr["year"]);
 		$author=$arr["author"];
@@ -113,15 +72,25 @@ if(have_posts()) :
 					$args = array(
 			'numberposts' => -1,
 			'post_type' => 'wcmc',
-			'meta_key'=>'author_name1',
-			'meta_value'=>$author,
-			'post__in'=>$matchesDate
-			); 
-
+			'meta_query' => array(
+									'relation' => 'AND',
+											array(
+												'key' => 'date', //gets ACF value assoc with 'date'
+												'compare' => '=',
+												'value' => $year //val of dropdown
+											),
+											array(
+												'key' => 'author_name1', //gets ACF value assoc with 'author_name1'
+												'value' => $author, // gets value from $arr, which gets value from dropdown
+												'compare' => '='
+											)
+								)
+				); 
+		//print_r("year and author");
 		break;
 
 		case (isset($arr["keyword"])):
-		//$searchType ="keyword";
+		$searchType ="keyword";
 
 		$kywd=strtolower($arr["keyword"]);
 		$getTerms = get_terms('wcmc_keywords','hide_empty=0');
@@ -224,7 +193,42 @@ if(have_posts()) :
 	logit( $arr, '$arr:' );
 	logit( $kywd, '$kywd:' );
 	logit( $args, '$args:' );
- ?>
+
+	
+
+	//############################################
+	//#############    FIREPHP  ##################
+ 	/*
+
+	$firephp = FirePHP::getInstance(true);
+	 
+	$var = $arr;
+	$var2 = $author;
+	$var3= $year;
+	$var4 = $args;
+	$var5 = $auth;
+	$var6 = $gets;
+	$var7 = $kywd;
+	$var8 = $getTerms;
+	$var9 = $name_getTerms;
+
+
+
+	$firephp->log($var6,'$gets');
+	$firephp->log($var,'$arr');
+	//$firephp->log($var2,'$author');
+	//$firephp->log($var3,'$year');
+	//$firephp->log($var5,'$auth');
+	$firephp->log($var7,'$kywd');
+	$firephp->log($var4,'$args');
+	$firephp->log($var8,'$getTerms');
+	$firephp->log($var,'$name_getTerms');
+*/
+	
+	
+	//############################################
+	//############################################
+	 ?>
 
 <?php get_footer(); ?>
 
