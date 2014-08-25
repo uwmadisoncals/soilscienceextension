@@ -18,7 +18,7 @@
 			<option value="2007" name="yr">2007</option>
 			<option value="2006" name="yr">2006</option>
 			<option value="2005" name="yr">2005</option>
-			<option value="20%%" name="yr">2004</option>
+			<option value="2004" name="yr">2004</option>
 		</select>
 
 		<select name="subject">
@@ -54,7 +54,7 @@
 			<option value="2007" name="yr">2007</option>
 			<option value="2006" name="yr">2006</option>
 			<option value="2005" name="yr">2005</option>
-			<option value="20%%" name="yr">2004</option>
+			<option value="2004" name="yr">2004</option>
 		</select>
 		<input id="yearAuthorField" type="text" name="auth" size="20" alt="Search" value="" />
 		<input type="submit" name="submit" alt="Search" value="Go" />

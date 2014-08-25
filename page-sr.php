@@ -70,7 +70,20 @@ if(have_posts()) :
 
 	while($getWCMC->have_posts()): $getWCMC->the_post(); ?>
 	<?php
+
+	//variables that must be defined in this loop
+	$select = get_field_object('subject'); //get the select field object 'subject'
+	$choices = $select['choices']; //get the choices for 'subject'
+	$selct_val = get_field('subject');
+
 	endwhile;
+
+	$arrChoices = array(); //create empty array
+
+	foreach($choices as $key => $val){ //create an indexed array of all post id's of custom post type 'wcmc' 
+		$arrChoices[] = $key;
+	}
+
 	wp_reset_postdata(); //reset post data
 	else : ?>
 	<p>sorry no results are available...on post object $getWCMC</p>
@@ -78,15 +91,18 @@ if(have_posts()) :
 	<?php 
 	endif;
 
-	//logit( $posts_getWCMC, '$posts_getWCMC:');
-	//logit( $arrID, '$arrID:');
-	//logit( $arrID_date, '$arrID_date:');
-	//logit( $year, '$year:');
-	//logit( $arrID_year, '$arrID_year:');
-	//logit( $matchesDate, '$matchesDate:');
+	
 
-
-
+	logit( $posts_getWCMC, '$posts_getWCMC:');
+	logit( $arrID, '$arrID:');
+	logit( $arrID_date, '$arrID_date:');
+	logit( $year, '$year:');
+	logit( $arrID_year, '$arrID_year:');
+	logit( $matchesDate, '$matchesDate:');
+	logit(	$choices , '	$choices :');
+	logit(	$arrChoices , '	$arrChoices :');
+	logit(	$select , '	$select :');
+		logit(	$selct_val , '	$selct_val :');
 /////////////////////////////
 // END GetWCMC loop        //
 /////////////////////////////
@@ -95,14 +111,26 @@ if(have_posts()) :
 		case (isset($arr["year"]) && isset($arr["subject"])):
 				$subj=$arr["subject"];
 
-					$args = array(
-			'numberposts' => -1,
-			'post_type' => 'wcmc',
-			'meta_key'=>'subject',
-			'meta_value'=>$subj,
-			'post__in'=>$matchesDate // In here should go an array of just post ids
-			); 
-
+			if($subj !== 'all subjects'){
+				$args = array(
+				'posts_per_page'=>-1,
+				'post_type' => 'wcmc',
+				'post__in'=>$matchesDate,
+				'meta_query'=>array(
+						array(
+							'key'=>'subject',
+							'value'=>$subj,
+							'compare'=>'='
+						)
+					)
+				);
+			}else{
+				$args = array(
+				'posts_per_page'=>-1,
+				'post_type' => 'wcmc',
+				'post__in'=>$matchesDate
+				);
+			}
 		break; 
 
 		case (isset($arr["year"]) && isset($arr["author"])):
@@ -187,7 +215,7 @@ if(have_posts()) :
 					<p>sorry no results are available.</p>
 					</ul>
 				<?php endif; ?>
-				 <?php //logit( $wp_query, '$wp_query:' ); ?>
+				 <?php logit( $wp_query, '$wp_query:' ); ?>
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 
 			</div><!-- #content -->
@@ -219,12 +247,15 @@ if(have_posts()) :
 	//logit($myDate, '$myDate');
 	//logit($myDateFormat,'$myDateFormat');
 	//logit($DateTimestamp, '$DateTimestamp');
-
-	//logit( $gets, '$gets:' );
-	//logit( $arr, '$arr:' );
-	//logit( $kywd, '$kywd:' );
-	//logit( $args, '$args:' );
- ?>
+	logit( $gets, '$gets:' );
+	logit( $arr, '$arr:' );
+	logit( $kywd, '$kywd:' );
+	logit( $args, '$args:' );
+	logit( $subj, '$subj:' );
+	//logit( $the_subject_type, '$the_subject_type:' );
+	logit( $args, '$args:' );
+	logit( $message, '$message:' );
+	?>
 
 <?php get_footer(); ?>
 
