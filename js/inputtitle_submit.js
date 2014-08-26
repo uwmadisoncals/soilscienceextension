@@ -85,7 +85,7 @@
 
 		   },
 		   error: function(){
-		   	alert("error thrown");
+		  console.log("error thrown");
 		   }
 		}); /*end ajax*/
   	}); /* end keyup */
