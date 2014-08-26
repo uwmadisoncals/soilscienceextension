@@ -102,10 +102,10 @@ get_header(); ?>
 
 												foreach($choices as $ch=>$val){
 
-														logit($val,'$val: ');
+														//logit($val,'$val: ');
 														echo  $val .' ';
 														//array_search($val,$choices);
-														logit(array_search($val,$choices), 'ch: ');
+														//logit(array_search($val,$choices), 'ch: ');
 														echo '<option value="' . array_search($val,$choices) . '" name="subject">' . $val . '</option>';
 
 													}
@@ -162,7 +162,7 @@ get_header(); ?>
 							 ?>
 
 							<?php 
-								logit(	$choices , '	$choices :');
+								//logit(	$choices , '	$choices :');
 								//logit(	$select , '	$select :');
 						//logit(	$selct_val , '	$selct_val :');
 						//logit(	$choice_array , '	$choice_array :');

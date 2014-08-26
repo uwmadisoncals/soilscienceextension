@@ -93,16 +93,16 @@ if(have_posts()) :
 
 	
 
-	logit( $posts_getWCMC, '$posts_getWCMC:');
-	logit( $arrID, '$arrID:');
-	logit( $arrID_date, '$arrID_date:');
-	logit( $year, '$year:');
-	logit( $arrID_year, '$arrID_year:');
-	logit( $matchesDate, '$matchesDate:');
-	logit(	$choices , '	$choices :');
-	logit(	$arrChoices , '	$arrChoices :');
-	logit(	$select , '	$select :');
-		logit(	$selct_val , '	$selct_val :');
+	//logit( $posts_getWCMC, '$posts_getWCMC:');
+	//logit( $arrID, '$arrID:');
+	//logit( $arrID_date, '$arrID_date:');
+	//logit( $year, '$year:');
+	//logit( $arrID_year, '$arrID_year:');
+	//logit( $matchesDate, '$matchesDate:');
+	//logit(	$choices , '	$choices :');
+	//logit(	$arrChoices , '	$arrChoices :');
+	//logit(	$select , '	$select :');
+		//logit(	$selct_val , '	$selct_val :');
 /////////////////////////////
 // END GetWCMC loop        //
 /////////////////////////////
@@ -215,7 +215,7 @@ if(have_posts()) :
 					<p>sorry no results are available.</p>
 					</ul>
 				<?php endif; ?>
-				 <?php logit( $wp_query, '$wp_query:' ); ?>
+				 <?php //logit( $wp_query, '$wp_query:' ); ?>
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
 
 			</div><!-- #content -->
@@ -247,14 +247,14 @@ if(have_posts()) :
 	//logit($myDate, '$myDate');
 	//logit($myDateFormat,'$myDateFormat');
 	//logit($DateTimestamp, '$DateTimestamp');
-	logit( $gets, '$gets:' );
-	logit( $arr, '$arr:' );
-	logit( $kywd, '$kywd:' );
-	logit( $args, '$args:' );
-	logit( $subj, '$subj:' );
+	//logit( $gets, '$gets:' );
+	//logit( $arr, '$arr:' );
+	//logit( $kywd, '$kywd:' );
+	//logit( $args, '$args:' );
+	//logit( $subj, '$subj:' );
 	//logit( $the_subject_type, '$the_subject_type:' );
-	logit( $args, '$args:' );
-	logit( $message, '$message:' );
+	//logit( $args, '$args:' );
+	//logit( $message, '$message:' );
 	?>
 
 <?php get_footer(); ?>
