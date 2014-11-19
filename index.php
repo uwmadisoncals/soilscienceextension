@@ -415,6 +415,44 @@ echo $category[0]->slug; ?></div>
 	<?php endif; ?>
 </div>
 
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--            WORK IN PROGRESS, NEWS for FRONT PAGE....Temporarily Commented out       -->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- <div class="rss_heading_wrapper2"><h2 class="rss_heading2">News</h2></div>
+<div class="rss_container cf"> -->
+
+<?php
+//$argsNews = array(
+	//'post_type'=>'post',
+	//'numberposts'=>'-1',
+	//'category_name'=>'news'
+	//);
+
+	//$newsQuery = new WP_Query($argsNews);
+
+?>
+
+	<?php
+
+	//if($newsQuery->have_posts() ):
+
+	// while ($newsQuery->have_posts() ) : $newsQuery->the_post(); ?>
+
+   <!-- <p>title here:<?php the_title(); ?></p> -->
+
+
+	<?php // endwhile ?><!-- from the loop-->
+		<?php // endif ?><!-- from the loop-->
+	<?php // wp_reset_query(); ?>
+
+<!-- </div> -->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->		
+
+
+
+
 <?php /*logit( $rssArray, '$rssArray:' ); */?>
 <?php /*logit( $rss_items, '$rss_items:');*/ ?>
 <?php /* logit( $sortd_rssArray, '$sortd_rssArray:'  ); */ ?>
