@@ -17550,7 +17550,7 @@ var countFeatures = 0;
 var headeroverlay_hght = function (){
 	var currnt_ho_hght = (parseInt($("div.headeroverlay").css("height")));
 	if( currnt_ho_hght>40 && currnt_ho_hght <= 80){
-		$("div#main").css("padding-top",0);
+		$("div#main").css("padding-top",40);
 	}else if(currnt_ho_hght>80 && currnt_ho_hght <=120){
 		$("div#main").css("padding-top",80);
 	}else if(currnt_ho_hght>120 && currnt_ho_hght < 160){
