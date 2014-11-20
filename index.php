@@ -390,6 +390,61 @@ echo $category[0]->slug; ?></div>
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--            WORK IN PROGRESS, NEWS for FRONT PAGE....Temporarily Commented out       -->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+<div class="news_heading_wrapper"><h2 class="news_heading">News</h2></div>
+<div class="news_container cf">
+
+<?php
+$argsNews = array(
+	'post_type'=>'post',
+	'posts_per_page'=>'3',
+	'category_name'=>'news',
+	'orderby'=>'date',
+	'order'=>'DESC'
+	);
+
+	$newsQuery = new WP_Query($argsNews);
+
+?>
+
+	<?php
+
+	if($newsQuery->have_posts() ):
+
+	while ($newsQuery->have_posts() ) : $newsQuery->the_post(); ?>
+
+
+   <div class="news_item">
+					<div class="news_item_inner">
+						<div class="news_hyperlink"><a class="news_feed" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+						<div class="news_date"><p><span class="news_author"><a href="" title="<?php the_author(); ?>" ><?php the_author(); ?></a></span>,  <?php the_time('M j, Y'); ?></p></div>
+						<div class="news_desc"><?php the_excerpt(); ?></div>
+					</div> <!-- END .news_item_inner -->
+	</div><!-- END .news_item -->
+
+
+	<?php  endwhile ?><!-- from the loop-->
+
+	<?php else : ?>
+
+			<!-- This is displayed when no matching posts are available-->
+		   <div class="noNews">
+					<p>Unfortunately no news is available.</p>
+			</div><!-- END .noNews_item -->
+
+		<?php  endif ?><!-- from the loop-->
+	<?php  wp_reset_query(); ?>
+
+ </div><!--END .news_container -->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->	
+
+
 <div class="rss_heading_wrapper"><h2 class="rss_heading">Recent Articles from our Extension Soil Scientists</h2></div>
 <div class="rss_container cf">
 	<?php if($maxitems ==0): ?>
@@ -415,40 +470,7 @@ echo $category[0]->slug; ?></div>
 	<?php endif; ?>
 </div>
 
-<!--/////////////////////////////////////////////////////////////////////////////////////-->
-<!--            WORK IN PROGRESS, NEWS for FRONT PAGE....Temporarily Commented out       -->
-<!--/////////////////////////////////////////////////////////////////////////////////////-->
-
-<!-- <div class="rss_heading_wrapper2"><h2 class="rss_heading2">News</h2></div>
-<div class="rss_container cf"> -->
-
-<?php
-//$argsNews = array(
-	//'post_type'=>'post',
-	//'numberposts'=>'-1',
-	//'category_name'=>'news'
-	//);
-
-	//$newsQuery = new WP_Query($argsNews);
-
-?>
-
-	<?php
-
-	//if($newsQuery->have_posts() ):
-
-	// while ($newsQuery->have_posts() ) : $newsQuery->the_post(); ?>
-
-   <!-- <p>title here:<?php the_title(); ?></p> -->
-
-
-	<?php // endwhile ?><!-- from the loop-->
-		<?php // endif ?><!-- from the loop-->
-	<?php // wp_reset_query(); ?>
-
-<!-- </div> -->
-<!--/////////////////////////////////////////////////////////////////////////////////////-->
-<!--/////////////////////////////////////////////////////////////////////////////////////-->		
+	
 
 
 
