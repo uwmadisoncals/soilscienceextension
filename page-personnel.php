@@ -47,12 +47,12 @@ get_header(); ?>
 					//echo var_dump($image);
 					?> <div class="faculty_wrapper">
 							<div class='faculty_photo'>
-								<a href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
+								<a href="<?php the_permalink(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
 							</div>
 
 							<div class="faculty_info">
 								<li>
-									<a class="faculty_name" href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><?php the_title(); ?></a>
+									<a class="faculty_name" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</li>
 								
 								<li>

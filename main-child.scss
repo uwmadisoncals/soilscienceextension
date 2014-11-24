@@ -371,6 +371,29 @@ body.page-faculty-and-staff div.faculty_wrapper{
     }
 }
 
+//page-faculty.php (formerly, page-faculty-and-staff.php)
+
+body.page-faculty div.faculty_wrapper{
+    margin-bottom: 2%;
+    div.faculty_photo{
+        float:left;
+    }
+
+    div.faculty_info{
+        float:left;
+        margin-left:2%;
+        li{
+            list-style-type: none;
+            a.faculty_name{
+                font-size:1.5em;
+            }
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
 //page-staff.php
 
 body.page-staff div.faculty_wrapper{
