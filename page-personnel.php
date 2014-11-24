@@ -44,6 +44,7 @@ get_header(); ?>
 					<ul>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 					$image = get_field('photo');
+					//echo var_dump($image);
 					?> <div class="faculty_wrapper">
 							<div class='faculty_photo'>
 								<a href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
@@ -126,9 +127,18 @@ get_header(); ?>
 					<ul>
 					<?php while ( $the_querySTAFF->have_posts() ) : $the_querySTAFF->the_post(); 
 					$image = get_field('photo');
+					//echo var_dump($image);
 					?> <div class="faculty_wrapper">
 							<div class='faculty_photo'>
-								<a href="<?php the_permalink(); ?>?id=<?php echo get_the_ID(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
+
+							<?php if ($image):
+								 echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . $image['url']  . '" alt="' . $image['alt'] . '"/></a>';
+								 else:
+								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img width="140" src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder.jpg"  . '" alt="' . $image['alt'] . '"/></a>';
+								endif;
+						 ?>
+
+								
 							</div>
 
 							<div class="faculty_info">
