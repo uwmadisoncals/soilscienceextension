@@ -7,7 +7,7 @@
 								if($image):
 									echo '<img src="' . $image['url'] . '" alt="' . $image['alt'] .  '"/>';
 								else:
-									echo '<img width="140" src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder.jpg" . '" alt="' . $image['alt'] .  '"/>';
+									echo '<img src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder5.png" . '" alt="' . $image['alt'] .  '"/>';
 								endif;
 							 ?>
 							 

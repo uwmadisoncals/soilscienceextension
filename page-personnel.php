@@ -47,7 +47,12 @@ get_header(); ?>
 					//echo var_dump($image);
 					?> <div class="faculty_wrapper">
 							<div class='faculty_photo'>
-								<a href="<?php the_permalink(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" ></a>
+								<?php if ($image):
+								 echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . $image['url']  . '" alt="' . $image['alt'] . '"/></a>';
+								 else:
+								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder5.png"  . '" alt="' . $image['alt'] . '"/></a>';
+								endif;
+						 ?>
 							</div>
 
 							<div class="faculty_info">
@@ -134,7 +139,7 @@ get_header(); ?>
 							<?php if ($image):
 								 echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . $image['url']  . '" alt="' . $image['alt'] . '"/></a>';
 								 else:
-								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img width="140" src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder.jpg"  . '" alt="' . $image['alt'] . '"/></a>';
+								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder5.png"  . '" alt="' . $image['alt'] . '"/></a>';
 								endif;
 						 ?>
 

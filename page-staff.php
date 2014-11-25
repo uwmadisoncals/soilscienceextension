@@ -50,7 +50,7 @@ get_header(); ?>
 							<?php if ($image):
 								 echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . $image['url']  . '" alt="' . $image['alt'] . '"/></a>';
 								 else:
-								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img width="140" src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder.jpg"  . '" alt="' . $image['alt'] . '"/></a>';
+								  echo '<a href="' . get_permalink() . '" id="' . get_the_ID()  . '"><img src="' . get_stylesheet_directory_uri()."/images/avatarplaceholder5.png"  . '" alt="' . $image['alt'] . '"/></a>';
 								endif;
 						 	?>
 						 	

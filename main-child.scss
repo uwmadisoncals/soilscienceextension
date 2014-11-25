@@ -359,6 +359,7 @@ body.page-faculty-and-staff div.faculty_wrapper{
     div.faculty_info{
         float:left;
         margin-left:2%;
+        max-width:480px;
         li{
             list-style-type: none;
             a.faculty_name{
@@ -382,6 +383,7 @@ body.page-faculty div.faculty_wrapper{
     div.faculty_info{
         float:left;
         margin-left:2%;
+        //max-width:480px;
         li{
             list-style-type: none;
             a.faculty_name{
@@ -405,6 +407,7 @@ body.page-staff div.faculty_wrapper{
     div.faculty_info{
         float:left;
         margin-left:2%;
+        //max-width:480px;
         li{
             list-style-type: none;
             a.faculty_name{
@@ -437,6 +440,7 @@ body.page-personnel div.faculty_wrapper{
                 font-weight: bold;
             }
         }
+
     }
 }
 
@@ -457,6 +461,7 @@ body.single-faculty div.faculty_wrapper{
     div.faculty_info{
         float:left;
         margin-left:4%;
+        max-width:470px;
         h2{
             font-size:1.5em;
             margin-bottom: .4em;
@@ -466,6 +471,10 @@ body.single-faculty div.faculty_wrapper{
             font-size: .95em;
             span{
                 font-weight: bold;
+            }
+            &:not(:last-of-type){
+                margin-bottom:5px;
+
             }
         }
 
