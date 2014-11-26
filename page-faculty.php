@@ -67,7 +67,10 @@ get_header(); ?>
 									$dept_label = $get_FO_dept['label'];
 									//logit( $dept_label, '$dept_label:' );
 									/* echo get_field_object('department')['label']; ?>: </span><?php the_field( "department" ); */
-									echo $dept_label; ?>: </span><?php the_field( "department" ); ?>
+									/*echo $dept_label; ?>: </span><?php the_field( "department" );*/
+									if($get_FO_dept['value']):echo '<li><span>' . $dept_label . ': </span>' . $get_FO_dept['value'] . '</li>'; endif; 
+
+									 ?>
 								</li>
 
 								<li>
@@ -78,7 +81,9 @@ get_header(); ?>
 
 									 /* echo get_field_object('email')['label']; ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a> */
 
-									echo $email_label ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>
+									/*echo $email_label ?>: </span><a href="mailto:<?php the_field( "email" ); ?>"><?php the_field( "email" ); ?></a>*/
+									if($get_FO_email['value']):echo '<li><span>' . $email_label . ': </span>' . $get_FO_email['value'] . '</li>'; endif; 
+									?>
 
 
 								</li>
@@ -93,10 +98,13 @@ get_header(); ?>
 									
 									/* echo get_field_object('phone')['label']; ?>: </span><?php the_field( "phone" ); ?> */
 
-									echo $phone_label; ?>: </span><?php the_field( "phone" ); ?>
+									/*echo $phone_label; ?>: </span><?php the_field( "phone" );*/
+									if($get_FO_phone['value']):echo '<li><span>' . $phone_label . ': </span>' . $get_FO_phone['value'] . '</li>'; endif; 
+									 ?>
 
 								</li>
-							</div>
+							</div><!--END .faculty_info -->
+							
 							<div class="cf"></div>
 						</div>
 						
