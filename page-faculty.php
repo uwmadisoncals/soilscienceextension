@@ -1,10 +1,9 @@
 
 <?php
 /**
- * Template Name: No Side Bar
+ * Template Name: faculty page
  *
- * Description: Twenty Twelve loves the no-sidebar look as much as
- * you do. Use this page template to remove the sidebar from any page.
+ * Description: specialized page template for the faculty page
  *
  * Tip: to remove the sidebar from all posts and pages simply remove
  * any active widgets from the Main Sidebar area, and the sidebar will
