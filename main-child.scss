@@ -20,6 +20,10 @@
 ////////////////////
 
 
+.page-wcmc button, .page-wcmc input[type="submit"], .page-wcmc input[type="button"], .page-wcmc input[type="reset"], .page-wcmc a.button {
+	padding: 2px 10px 2px;
+}
+
 
 
 /* filtered */
@@ -78,6 +82,15 @@ div.noMatches.filtered{
 }
 
 /* #access ul */
+
+.page-wcmc form#access {
+	box-shadow: none;
+
+}
+
+.page-wcmc div#ac_input_wrapper {
+	margin: none;
+}
 
 #access .notEmpty.filtered ul {
     margin-left: 0;
