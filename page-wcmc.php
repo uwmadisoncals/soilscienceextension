@@ -18,7 +18,7 @@ get_header(); ?>
 
 		<div id="primary">
 		
-			<div id="content" role="main">
+			<div id="content" class="fullWidth" role="main">
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -215,7 +215,7 @@ get_header(); ?>
 			
 			
 		</div><!-- #primary -->
-		<?php get_sidebar(); ?>
+		<?php //get_sidebar(); ?>
 			<div class="clear"></div>
 
 	</div>
