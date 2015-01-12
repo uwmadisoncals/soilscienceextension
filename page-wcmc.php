@@ -51,6 +51,18 @@ get_header(); ?>
 					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
 							$select = get_field_object('subject'); //get the select field object 'subject'
 							$choices = $select['choices']; //get the choices for 'subject'
+							$select_author = get_field_object('author_name1');//
+							$choices_author = $select_author['choices'];//
+							//$select_keywords = get_field_object('keywords');//
+							$taxonomies = array('wcmc_keywords');
+							$termArgs = array(
+								'hide_empty'=>0,
+								'fields'=>'id=>name'
+								);
+
+							$wcmcTerms = get_terms($taxonomies, $termArgs);
+
+
 							//$selct_val = get_field('subject');
 							//$choice_array = array();
 
@@ -59,6 +71,7 @@ get_header(); ?>
 								logit($ch,'$ch: ');
 							}*/
 							?>
+
 
 
 							<div class="wcmc-search" rol="search">
@@ -145,19 +158,50 @@ get_header(); ?>
 										<option value="2004" name="yr">2004</option>
 
 									</select>
-									<input id="yearAuthorField" type="text" name="auth" size="20" alt="Search" value="" />
+									<!-- <input id="yearAuthorField" type="text" name="auth" size="20" alt="Search" value="" />-->
+									<select name="auth" id="yearAuthorField">
+										<?php 
+
+											foreach($choices_author as $ch=>$val){
+
+														//logit($val,'$val: ');
+														echo  $val .' ';
+														//array_search($val,$choices);
+														//logit(array_search($val,$choices), 'ch: ');
+														echo '<option value="' . array_search($val,$choices_author) . '" name="subject">' . $val . '</option>';
+
+													}
+
+										 ?>
+									</select>
 									<input type="submit" name="submit" alt="Search" value="Go" />
 								</form>
-
+							
 								<br />
 
 								
 								<p>Search all years by keyword:</p>
 								<form id="access" class="wcmc-form" action="<?php echo site_url('/sr'); ?>" method="GET">
-									<div id="ac_input_wrapper">
+									<!-- <div id="ac_input_wrapper">
 									<input id="autocomplete1" type="text" value="" size="20" name="keyword">
 									<input id="autocomplete1_submit" type="submit" value="Go" name="submit">
-									</div>
+									</div> -->
+									<select name="" id="access">
+										<?php 
+
+
+											foreach($choices_author as $ch=>$val){
+
+														//logit($val,'$val: ');
+														echo  $val .' ';
+														//array_search($val,$choices);
+														//logit(array_search($val,$choices), 'ch: ');
+														echo '<option value="' . array_search($val,$choices_author) . '" name="subject">' . $val . '</option>';
+
+													}
+
+										 ?>
+									</select>
 									<div class="autoc filtered"><ul></ul></div>
 								</form>
 							<div>
@@ -174,6 +218,12 @@ get_header(); ?>
 							<?php 
 								//logit(	$choices , '	$choices :');
 								//logit(	$select , '	$select :');
+								//logit($select_author, '$select_author: ');
+								//logit($choices_author, '$choices_author: ');
+								//logit($wcmcTerms ,'$wcmcTerms : ');
+
+								
+
 						//logit(	$selct_val , '	$selct_val :');
 						//logit(	$choice_array , '	$choice_array :');
 									//############################################
