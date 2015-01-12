@@ -39,7 +39,9 @@
 		  
 
 		 </div>
-
+<?php 
+logit($the_paper,'$the_paper: ');
+ ?>
 
 	<div class="paper">
 		<!-- Display the paper PDF Hyperlink icon-->
@@ -48,17 +50,20 @@
 
 			<a href="<?php echo $the_paper_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
 			
-			<?php } else { ?>
+			<?php }; ?>
 
-				<strong> There was an error retrieving the file named :  <?php echo $the_paper_title; ?></strong>
-
-			<?php   }; ?>
 		</div>
 		<div class="cf"></div>
 
 		<!-- Display the paper caption -->
 		<div class="wcmc-paper-name">
+		<?php 
+			if( $the_paper_url ){
+			 ?>
 			<a href="<?php echo $the_paper_url ?>">View the paper</a>
+			<?php } ?>
+
+			
 		</div>
 		<div class="cf"></div>
 	</div>
@@ -72,17 +77,16 @@
 
 			<a href="<?php echo $the_ppoint_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
 			
-			<?php } else { ?>
+			<?php }; ?>
 
-				<strong> There was an error retrieving the file named :  <?php echo $the_ppoint_title; ?></strong>
-
-			<?php   }; ?>
 		</div>
 		<div class="cf"></div>
 
 		<!-- Display the powerpoint caption -->
 		<div class="wcmc-ppoint-name">
+			<?php  if( $the_ppoint_url ){  ?>
 			<a href="<?php echo $the_ppoint_url ?>">View the powerpoint</a>
+			<?php } ?>
 		</div>
 		<div class="cf"></div>
 	</div>
