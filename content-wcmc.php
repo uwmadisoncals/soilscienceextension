@@ -40,7 +40,7 @@
 
 		 </div>
 <?php 
-logit($the_paper,'$the_paper: ');
+//logit($the_paper,'$the_paper: ');
  ?>
 
 	<div class="paper">

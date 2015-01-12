@@ -29,6 +29,15 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 				
+				
+				<div class="selectorContainer">
+					<div class="searchDivider"></div>
+				<div class="searchSelector clearfix">
+					<a href="#" class="selected simpleS">Simple Search</a><a href="#" class="advancedS">Advanced Search</a>
+				</div>
+				</div>
+			
+			 <div class="clearfix advancedSearch" style="display: none;">
 			<?php// get_template_part('wcmc','searchform') ?>
 			 
 			<?php 
@@ -209,7 +218,200 @@ get_header(); ?>
 				<?php endif; ?>
 				 
 				<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>
+							</div></div>
+				<div class="clearfix simpleSearch">
+				<style>
+					.filtered2 li {
+						display: none;
+					}
+					
+	.filtered2 li.hidden {
+		display: none;
+	}	
+	.filtered2 li.visible {
+		display: block;
+	}	
+	
+	.wcmc_hidden {
+		display: none;
+	}
+</style>
+<input id="wcmc_s" class="field" type="text" placeholder="General Search" name="wcmc_s">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+			$(function(){			
+		
+		$(".simpleS").click(function(e) {
+			e.preventDefault();
+			
+			$(".simpleSearch").show();
+			$(".advancedSearch").hide();
+			
+			$(this).addClass("selected");
+			$(".advancedS").removeClass("selected");
+		});
+		
+		$(".advancedS").click(function(e) {
+			e.preventDefault();
+			
+			$(".simpleSearch").hide();
+			$(".advancedSearch").show();
+			
+			$(this).addClass("selected");
+			$(".simpleS").removeClass("selected");
+		});
+		
+		
+		//Regular Expression Search Filter Auto Complete
+		$("#wcmc_s").keyup(function () {
+			var filter = $(this).val(), count = 0;
+			var resultscounted = 0;
+			//console.log(filter);
+			
+		        //console.log("s");    
+			$(".filtered2 li").each(function () {
+				//console.log($(this).text().search(new RegExp(filter, "i")));
+		        if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+			        
+			        $(this).addClass("hidden"); 
+			        $(this).removeClass("visible"); 
+			       
+			        
+		        } else {
 				
+					
+					
+			
+				
+		            $(this).removeClass("hidden");
+		            $(this).addClass("visible");
+		            
+		          
+		            
+		            count++;
+		           
+		            
+		        }
+		    });
+		    
+		    if(filter == "") {
+			    $(".filtered2 li").removeClass("visible"); 
+			     $(".filtered2 li").addClass("hidden"); 
+		    }
+		   
+		
+		
+		   });
+		   
+		   });
+				</script>
+				
+				<?php $args = array('post_type' => array( 'wcmc' ), 'posts_per_page' => 500);
+					$wcmcfull_query = new WP_Query( $args );
+
+if ( $wcmcfull_query->have_posts() ) { ?>
+<div class="filtered2">
+	<ul>
+	<?php while ( $wcmcfull_query->have_posts() ) {
+		$wcmcfull_query->the_post(); ?>
+		
+		<li>
+		<div class="wcmc_shown">
+			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<div class="author"><div class="label">Author</div> <?php the_field('author_name1'); ?></div>
+			<?php if(get_field('author_name2')) { ?>
+			<div class="author"><div class="label">Author</div> <?php the_field('author_name2'); ?></div>
+			<?php } ?>
+			<?php if(get_field('third_author')) { ?>
+			<div class="author"><div class="label">Author</div> <?php the_field('third_author'); ?></div>
+			<?php } ?>
+			<div class="date"><div class="label">Year</div>
+			<?php $date = DateTime::createFromFormat('Ymd', get_field('date'));
+echo $date->format('Y'); ?>
+			</div>
+			
+		</div>
+		
+		<div class="wcmc_hidden">
+			<div><?php the_content(); ?></div>
+			<div><?php the_field('organization'); ?></div>
+			<div><?php the_field('title'); ?></div>
+			<div><?php the_field('subtitle'); ?></div>
+			<div><?php the_field('subject'); ?></div>
+			
+
+		
+		<?php 
+			
+			$termids = get_field('keywords');
+			
+			if($termids) {
+			
+			//echo $termid;
+// no default values. using these as examples
+$taxonomies = array( 
+   
+    'wcmc_keywords',
+);
+
+$args = array(
+    'orderby'           => 'name', 
+    'order'             => 'ASC',
+    'hide_empty'        => false, 
+    'exclude'           => array(), 
+    'exclude_tree'      => array(), 
+    'include'           => $termids,
+    'number'            => '', 
+    'fields'            => 'all', 
+    'slug'              => '',
+    'name'              => '',
+    'parent'            => '',
+    'hierarchical'      => true, 
+    'child_of'          => 0, 
+    'get'               => '', 
+    'name__like'        => '',
+    'description__like' => '',
+    'pad_counts'        => false, 
+    'offset'            => '', 
+    'search'            => '', 
+    'cache_domain'      => 'core'
+); 
+
+$terms = get_terms($taxonomies, $args);
+
+if( $terms ): 
+
+	
+
+	 foreach( $terms as $term ): ?>
+
+		<div><?php echo $term->name; ?></div>
+		
+
+	<?php endforeach; ?>
+
+	
+
+<?php endif; } ?>
+
+
+
+
+		</div>
+		
+		</li>
+	<?php }
+
+} else {
+	// no posts found
+}
+
+
+ ?>
+ 
+	</ul>
+</div>
+				</div>
 			</div><!-- #content -->
 			
 			
