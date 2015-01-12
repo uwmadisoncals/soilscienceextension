@@ -356,6 +356,12 @@ div.noNews{
     }
 }
 
+//class to hide .noNews
+
+.invisible{
+    display: none;
+}
+
 // add extra padding to primary container
 body.home.blog #primary{
     padding-bottom:70px;

@@ -2,13 +2,16 @@ $( document ).ready(function() {
 //alert("testing");
 
 
+var noNewsExists = $('.noNews').length;
 
 
-/*if (typeof jQuery.ui !=='undefined'){
-	alert("JQuery UI loaded");
-}else{
-	alert("No jquery UI");
-}*/
+if ( !noNewsExists == 0){
+	$( ".news_heading_wrapper" ).addClass( "invisible" ); //noNews does exist in markup
+	$( ".news_container" ).addClass( "invisible" );
+
+};
+
+
 
 // Fix the height of the main div based upon the number of rows in the Main navigation. Supports up to 3 rows.
 var headeroverlay_hght = function (){
