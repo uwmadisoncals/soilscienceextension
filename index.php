@@ -399,12 +399,20 @@ echo $category[0]->slug; ?></div>
 <div class="news_container cf">
 
 <?php
+
+$threeMoAgo = date('Y-m-d', strtotime('-3 month'));
+
 $argsNews = array(
 	'post_type'=>'post',
 	'posts_per_page'=>'3',
 	'category_name'=>'news',
 	'orderby'=>'date',
-	'order'=>'DESC'
+	'order'=>'DESC',
+	'date_query'=>array(
+		array(
+			'after'=>$threeMoAgo
+			)
+		),
 	);
 
 	$newsQuery = new WP_Query($argsNews);
@@ -437,6 +445,9 @@ $argsNews = array(
 			</div><!-- END .noNews_item -->
 
 		<?php  endif ?><!-- from the loop-->
+		<?php //logit($newsQuery->posts, '$newsQuery->posts: ');
+		
+		 ?>
 	<?php  wp_reset_query(); ?>
 
  </div><!--END .news_container -->
