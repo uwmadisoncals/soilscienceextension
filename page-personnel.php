@@ -32,7 +32,9 @@ get_header(); ?>
 									'numberposts'=>-1,
 									'post_type' => 'faculty',
 									'meta_key'=>'employee_type',
-									'meta_value'=>'faculty'
+									'meta_value'=>'faculty',
+									'orderby'=>'menu_order',
+									'order'=>'ASC'
 									);
 
 
@@ -127,7 +129,9 @@ get_header(); ?>
 									'numberposts'=>-1,
 									'post_type' => 'faculty',
 									'meta_key'=>'employee_type',
-									'meta_value'=>'staff'
+									'meta_value'=>'staff',
+									'orderby'=>'menu_order',
+									'order'=>'ASC'
 									);
 
 
