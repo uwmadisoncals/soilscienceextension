@@ -326,8 +326,10 @@ if ( $wcmcfull_query->have_posts() ) { ?>
 			<div class="author"><div class="label">Author</div> <?php the_field('third_author'); ?></div>
 			<?php } ?>
 			<div class="date"><div class="label">Year</div>
-			<?php $date = DateTime::createFromFormat('Ymd', get_field('date'));
-echo $date->format('Y'); ?>
+			<?php $myStr = get_field('date'); 
+				$result = substr($myStr, 0, 4);
+				echo $result;
+			 ?>
 			</div>
 			
 		</div>
