@@ -306,7 +306,14 @@ get_header(); ?>
 		   });
 				</script>
 				
-				<?php $args = array('post_type' => array( 'wcmc' ), 'posts_per_page' => 500);
+				<?php $args = array(
+									'post_type' => array( 'wcmc' ),
+									'posts_per_page' => 500,
+									'meta_key' => 'date',
+									'orderby' => 'meta_value_num',
+									'order' => 'DESC'
+									);
+
 					$wcmcfull_query = new WP_Query( $args );
 
 if ( $wcmcfull_query->have_posts() ) { ?>
