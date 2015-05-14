@@ -18,6 +18,9 @@ Version:        0.1.0
     top: 10px;
 } */
 
+body.home div#main{
+    margin-bottom:0;
+}
 
 html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
     position: absolute;
