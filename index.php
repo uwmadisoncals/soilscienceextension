@@ -19,7 +19,7 @@ get_header(); ?>
 
 
 $rss = fetch_feed(array(
-	'http://pipes.yahoo.com/pipes/pipe.run?_id=6bddd698689cecd033c421e03d44473d&_render=rss',	));
+	'http://www.rssmix.com/u/8167593/rss.xml',	));
 
 if(! is_wp_error($rss)):
 
