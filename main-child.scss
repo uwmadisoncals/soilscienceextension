@@ -404,9 +404,21 @@ div.news_heading_wrapper{
             margin: 0 2% 0 0;
             padding: 2%;
             
+            //when 2 news items are displayed
+            &.count_2{
+                width:48%;
+            }
+
+            //when 1 news items are displayed
+            &.count_1{
+                width:auto;
+                margin-right:0;
+            }
+            
             div.news_item_inner{
                 overflow:hidden;
-                height:180px;
+                max-height:180px;
+
                 div.news_hyperlink{
                     a.news_feed{
                         font-family: "Open Sans",sans-serif;

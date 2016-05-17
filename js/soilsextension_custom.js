@@ -39,6 +39,20 @@ $("#s, #autocomplete1, #yearAuthorField").attr("autocomplete","off");
 //$('.wrapReady').slickWrap();
 
 
+if($('body').is(".home.blog")){
+
+	//get number of news items and add css class accordingly
+	var child_count = $( '.news_container .news_item' ).length;
+
+	if(child_count == 2){
+		$(".news_item").addClass("count_2");
+	}else if( child_count == 1 ){
+		$(".news_item").addClass("count_1");
+	}
+
+}
+
+
 
 headeroverlay_hght();
 
