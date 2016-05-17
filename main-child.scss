@@ -251,6 +251,20 @@ div.isotope-item{
     display:none;
 }
 
+//All 'read more' links on front page
+body.home.blog a.more-link{
+    //color:#AE7619;
+    //font-family: "Open Sans",sans-serif;
+    //font-size: 1.2em;
+    font-weight:bold;
+    ///color:#CA9B67;
+    word-break:initial;
+    -moz-hyphens:none;
+    &:hover{
+        color:#373737;
+    }
+}
+
 //The RSS grid on the front page.
 div.rss_heading_wrapper{
     background-color:#BFAE9B;

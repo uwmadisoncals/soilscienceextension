@@ -17586,6 +17586,15 @@ if($('body').is(".home.blog")){
 		$(".news_item").addClass("count_1");
 	}
 
+	//recent articles (RSS Feed) auto populate 'readmore' href
+	$(".rss_item").each(function(index){
+		
+		var sourceHref = $(this).find('.rss_item_inner .rss_hyperlink a').attr('href');
+
+		$(this).find('.rss_item_inner .rss_desc a.more-link').attr('href', sourceHref);
+
+	});
+
 }
 
 
