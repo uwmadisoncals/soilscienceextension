@@ -257,11 +257,12 @@ body.home.blog a.more-link{
     //font-family: "Open Sans",sans-serif;
     //font-size: 1.2em;
     font-weight:bold;
-    ///color:#CA9B67;
+    color:#CA9B67;
     word-break:initial;
     -moz-hyphens:none;
     &:hover{
-        color:#373737;
+        //color:#373737;
+        color:#7F7F7F;
     }
 }
 

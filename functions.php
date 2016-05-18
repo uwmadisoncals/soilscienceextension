@@ -64,7 +64,7 @@ add_action('after_setup_theme', 'child_theme_setup');
 //Replace excerpt "more" with link to post
 function new_excerpt_more($more){
 	global $post;
-	return '<a class="more-link" href="'. get_permalink($post->ID) . '"> Read more...</a>';
+	return '&nbsp;<a class="more-link" href="'. get_permalink($post->ID) . '">Read more...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
