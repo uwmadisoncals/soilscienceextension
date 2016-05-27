@@ -14,7 +14,7 @@
 	      $the_ppoint = get_field('presentation');
 	      	$the_ppoint_url = $the_ppoint['url'];
 	      	$the_ppoint_title = $the_ppoint['title'];
-	      
+	      $the_authors = get_field('authors');
 	 ?>
 
 
@@ -28,17 +28,30 @@
 						<?php } ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<div class="wcmc-author-date"> <span>By: <?php the_field("author_name1") ?> , 
-
-
+		<p class="wcmc-date">
 			<?php
 			$date = DateTime::createFromFormat('Ymd', get_field('date'));
-			echo $date->format('m/d/Y');
-			?></span>
-			
-		  
+			echo $date->format('Y');
+			?>
+		</p>
+		<h2 class="wcmc-subtitle"><?php the_field('subtitle'); ?></h2>
+		<?php if( have_rows('authors') ): ?>
+			<ul class="wcmc-author wcmc-list">
+				<?php while( have_rows('authors') ): the_row(); ?>
+					<li><?php the_sub_field('name'); ?></li>
+				<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		<?php if( have_rows('org') ): ?>
+			<ul class="wcmc-org wcmc-list">
+				<?php while( have_rows('org') ): the_row(); ?>
+					<li><?php the_sub_field('org_names'); ?></li>
+				<?php endwhile; ?>
+			</ul>
+		<?php endif; ?>
+		
 
-		 </div>
+		
 <?php 
 //logit($the_paper,'$the_paper: ');
  ?>

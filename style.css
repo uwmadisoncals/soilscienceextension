@@ -161,3 +161,43 @@ Autocomplete styling for the form on page-wcmc
 div#autoc ul li{
     list-style-type: none;
 }
+
+
+/* WCMC Post Stylings */
+
+.wcmc-list {
+	margin:0;
+}
+.wcmc-list li {
+	list-style-type:none;
+	display:inline;
+}
+.wcmc-list li::after {
+	content: ","
+}
+.wcmc-list li:last-of-type::after {
+	content: ""
+}
+.wcmc-subtitle {
+	font-size:1.7em;
+	margin:4px;
+	font-weight:100;
+	margin-right:45px;
+}
+.wcmc-author {
+	font-size:1.3em;
+	margin:12px 4px 0;
+}
+.wcmc-org {
+	font-size:1.1em;
+	margin:4px;
+}
+.wcmc-date {
+	position:absolute;
+	right:0;
+	margin:7px;
+	font-size:1.3em;
+	background:white;
+}
+
+
