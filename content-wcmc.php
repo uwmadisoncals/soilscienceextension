@@ -14,7 +14,8 @@
 	      $the_ppoint = get_field('presentation');
 	      	$the_ppoint_url = $the_ppoint['url'];
 	      	$the_ppoint_title = $the_ppoint['title'];
-	      $the_authors = get_field('authors');
+	      $the_videoid = get_field('video_id');
+	      $more_info = get_field('more');
 	 ?>
 
 
@@ -27,22 +28,28 @@
 		 					</div>
 						<?php } ?>
 	<header class="entry-header">
+	
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+		
 		<p class="wcmc-date">
 			<?php
 			$date = DateTime::createFromFormat('Ymd', get_field('date'));
 			echo $date->format('Y');
 			?>
 		</p>
+		
 		<h2 class="wcmc-subtitle"><?php the_field('subtitle'); ?></h2>
+		
 		<?php if( have_rows('authors') ): ?>
 			<ul class="wcmc-author wcmc-list">
 				<?php while( have_rows('authors') ): the_row(); ?>
 					<li><?php the_sub_field('name'); ?></li>
 				<?php endwhile; ?>
 			</ul>
-		<?php endif; ?>
-		<?php if( have_rows('org') ): ?>
+		<?php 
+		endif;
+		if( have_rows('org') ): 
+		?>
 			<ul class="wcmc-org wcmc-list">
 				<?php while( have_rows('org') ): the_row(); ?>
 					<li><?php the_sub_field('org_names'); ?></li>
@@ -50,63 +57,55 @@
 			</ul>
 		<?php endif; ?>
 		
-
-		
 <?php 
 //logit($the_paper,'$the_paper: ');
  ?>
 
-	<div class="paper">
-		<!-- Display the paper PDF Hyperlink icon-->
-		<div class="wcmc-paper-icon">
-			<?php  if( $the_paper_url ){  ?>
+		
+	<section class="wcmc-media">
 
-			<a href="<?php echo $the_paper_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
-			
-			<?php }; ?>
+	<!-- if there's any media, display title -->	
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
+			<h6>Project Media</h6>
+		<?php }; ?>
+		
+	<!-- Paper -->
+		<?php  if( $the_paper_url ){  ?>
+			<article class="item paper">
+				<a href="<?php echo $the_paper_url ?>"><img class="paper" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
+			</article>
+		<?php }; ?>
 
-		</div>
-		<div class="cf"></div>
+	<!-- Powerpoint -->		
+		<?php  if( $the_ppoint_url ){  ?>
+			<article class="item ppoint">
+				<a href="<?php echo $the_ppoint_url ?>" ><img class="powerpoint" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-ppoint.svg" alt="black powerpoint icon"> -->
 
-		<!-- Display the paper caption -->
-		<div class="wcmc-paper-name">
-		<?php 
-			if( $the_paper_url ){
-			 ?>
-			<a href="<?php echo $the_paper_url ?>">View the paper</a>
-			<?php } ?>
+			</article>
+		<?php }; ?>
 
-			
-		</div>
-		<div class="cf"></div>
-	</div>
+	<!-- Video Embed -->		
+		<?php  if( $the_videoid ){  ?>
+			<article class="item video">
+				<p><?php echo $the_videoid ?></p>
+				<img class="video" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" />
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-video.svg" alt="black video launcher icon"> -->
 
+			</article>
+		<?php }; ?>
+	
+	<!-- More Info -->	
+		<?php  if( $more_info ){  ?>
+			<article class="item more">
+				<a href="<?php echo $more_info ?>"><img class="more info" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-more.svg" alt="black paper icon"> -->
 
-
-	<div class="ppoint">
-		<!-- Display the ppoint PDF Hyperlink icon-->
-		<div class="wcmc-ppoint-icon">
-			<?php  if( $the_ppoint_url ){  ?>
-
-			<a href="<?php echo $the_ppoint_url ?>" ><img src="<?php echo get_stylesheet_directory_uri();?>/images/small-medium-pdf-icon.svg" alt="charcoal black pdf icon" height="90px"></a>
-			
-			<?php }; ?>
-
-		</div>
-		<div class="cf"></div>
-
-		<!-- Display the powerpoint caption -->
-		<div class="wcmc-ppoint-name">
-			<?php  if( $the_ppoint_url ){  ?>
-			<a href="<?php echo $the_ppoint_url ?>">View the powerpoint</a>
-			<?php } ?>
-		</div>
-		<div class="cf"></div>
-	</div>
-
-
-
-
+			</article>
+		<?php }; ?>
+		
+	</section><!-- wcmc-media -->
 
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -116,53 +115,14 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'twentyeleven' ) );
-
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'twentyeleven' ) );
-			if ( '' != $tag_list ) {
-				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
-			} elseif ( '' != $categories_list ) {
-				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
-			} else {
-				$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyeleven' );
-			}
-
-			printf(
-				$utility_text,
-				$categories_list,
-				$tag_list,
-				esc_url( get_permalink() ),
-				the_title_attribute( 'echo=0' ),
-				get_the_author(),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
-			);
-		?>
 		<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
-
-		<?php if ( get_the_author_meta( 'description' ) && ( ! function_exists( 'is_multi_author' ) || is_multi_author() ) ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
-		<div id="author-info">
-			<div id="author-avatar">
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyeleven_author_bio_avatar_size', 68 ) ); ?>
-			</div><!-- #author-avatar -->
-			<div id="author-description">
-				<h2><?php printf( __( 'About %s', 'twentyeleven' ), get_the_author() ); ?></h2>
-				<?php the_author_meta( 'description' ); ?>
-				<div id="author-link">
-					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentyeleven' ), get_the_author() ); ?>
-					</a>
-				</div><!-- #author-link	-->
-			</div><!-- #author-description -->
-		</div><!-- #author-info -->
-		<?php endif; ?>
 	</footer><!-- .entry-meta -->
+	
 </article><!-- #post-<?php the_ID(); ?> -->
