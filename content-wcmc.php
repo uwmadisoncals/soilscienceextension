@@ -66,41 +66,83 @@
 
 	<!-- if there's any media, display title -->	
 		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
-			<h6>Project Media</h6>
+			<h6>Project Media</h6>	
+			
 		<?php }; ?>
+		
 		
 	<!-- Paper -->
 		<?php  if( $the_paper_url ){  ?>
-			<article class="item paper">
-				<a href="<?php echo $the_paper_url ?>"><img class="paper" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+			<article class="item">
+			
+				<a href="#paper"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
 		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
+		
+				<div id="paper" class="modalDialog">
+					<div>
+						<a href="#close" title="Close" class="close">X</a>
+						<h2>Paper</h2>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+						<p>should there be anything?</p>
+						<a href="<?php echo $the_paper_url ?>" target="_blank">Click Here to Download</a>
+					</div>
+				</div>
+
 			</article>
 		<?php }; ?>
 
+
 	<!-- Powerpoint -->		
 		<?php  if( $the_ppoint_url ){  ?>
-			<article class="item ppoint">
-				<a href="<?php echo $the_ppoint_url ?>" ><img class="powerpoint" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-ppoint.svg" alt="black powerpoint icon"> -->
-
+			<article class="item">
+			
+				<a href="#powerpoint"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-ppoint.svg" alt="black paper icon"> -->
+		
+				<div id="powerpoint" class="modalDialog">
+					<div>
+						<a href="#close" title="Close" class="close">X</a>
+						<h2>Powerpoint</h2>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+						<p>sample text.</p>
+						<a href="<?php echo $the_ppoint_url ?>" target="_blank">Click Here to Download</a>
+					</div>
+				</div>
+				
 			</article>
 		<?php }; ?>
 
 	<!-- Video Embed -->		
 		<?php  if( $the_videoid ){  ?>
 			<article class="item video">
-				<p><?php echo $the_videoid ?></p>
-				<img class="video" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" />
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-video.svg" alt="black video launcher icon"> -->
-
+			
+				<a href="#video"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
+		
+				<div id="video" class="modalDialog">
+					<div>
+						<a href="#close" title="Close" class="close">X</a>
+						<h2>Video</h2>
+						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+				</div>
+				
 			</article>
 		<?php }; ?>
 	
 	<!-- More Info -->	
 		<?php  if( $more_info ){  ?>
 			<article class="item more">
-				<a href="<?php echo $more_info ?>"><img class="more info" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-more.svg" alt="black paper icon"> -->
+				<a href="#more"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
+		
+				<div id="more" class="modalDialog">
+					<div>
+						<a href="#close" title="Close" class="close">X</a>
+						<h2>More Info</h2>
+						<p><?php echo $more_info ?></p>
+					</div>
+				</div>
 
 			</article>
 		<?php }; ?>
