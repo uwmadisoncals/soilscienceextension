@@ -82,7 +82,7 @@
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Paper</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:70vw; height:50vh;" frameborder="0"></iframe>
 						<p>should there be anything?</p>
 						<a href="<?php echo $the_paper_url ?>" target="_blank">Click Here to Download</a>
 					</div>
@@ -103,7 +103,7 @@
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Powerpoint</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:70vw; height:50vh;" frameborder="0"></iframe>
 						<p>sample text.</p>
 						<a href="<?php echo $the_ppoint_url ?>" target="_blank">Click Here to Download</a>
 					</div>
@@ -123,7 +123,7 @@
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Video</h2>
-						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" width="940" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</div>
 				</div>
 				

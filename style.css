@@ -247,7 +247,7 @@ div#autoc ul li{
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.6);
-	z-index: 9999;
+	z-index: 999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
@@ -261,7 +261,7 @@ div#autoc ul li{
 }
 
 .modalDialog > div {
-	width: 400px;
+	width: 60vw;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
@@ -270,7 +270,7 @@ div#autoc ul li{
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
 	background: -o-linear-gradient(#fff, #999);
-	z-index:2;
+	z-index:999;
 }
 .close {
 	background: #606061;
