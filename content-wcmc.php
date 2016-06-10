@@ -75,7 +75,7 @@
 		<?php  if( $the_paper_url ){  ?>
 			<article class="item">
 			
-				<a href="#paper"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+				<a href="#paper"><i class="icon-paper"></i>Paper</a>
 		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
 		
 				<div id="paper" class="modalDialog">
@@ -96,7 +96,7 @@
 		<?php  if( $the_ppoint_url ){  ?>
 			<article class="item">
 			
-				<a href="#powerpoint"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+				<a href="#powerpoint"><i class="icon-pres"></i>Presentation</a>
 		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-ppoint.svg" alt="black paper icon"> -->
 		
 				<div id="powerpoint" class="modalDialog">
@@ -116,7 +116,7 @@
 		<?php  if( $the_videoid ){  ?>
 			<article class="item video">
 			
-				<a href="#video"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+				<a href="#video"><i class="icon-video"></i>Video</a>
 		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
 		
 				<div id="video" class="modalDialog">
@@ -133,7 +133,7 @@
 	<!-- More Info -->	
 		<?php  if( $more_info ){  ?>
 			<article class="item more">
-				<a href="#more"><img class="icon" src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" /></a>
+				<a href="#more"><i class="icon-more-info"></i>More Info</a>
 		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
 		
 				<div id="more" class="modalDialog">
