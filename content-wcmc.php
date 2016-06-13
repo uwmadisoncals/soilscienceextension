@@ -76,14 +76,12 @@
 			<article class="item">
 			
 				<a href="#paper"><i class="icon-paper"></i>Paper</a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
 		
 				<div id="paper" class="modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Paper</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:70vw; height:50vh;" frameborder="0"></iframe>
-						<p>should there be anything?</p>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:80vw; height:70vh;" frameborder="0"></iframe>
 						<a href="<?php echo $the_paper_url ?>" target="_blank">Click Here to Download</a>
 					</div>
 				</div>
@@ -97,14 +95,12 @@
 			<article class="item">
 			
 				<a href="#powerpoint"><i class="icon-pres"></i>Presentation</a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-ppoint.svg" alt="black paper icon"> -->
 		
 				<div id="powerpoint" class="modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Powerpoint</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:70vw; height:50vh;" frameborder="0"></iframe>
-						<p>sample text.</p>
+						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:80vw; height:70vh;" frameborder="0"></iframe>
 						<a href="<?php echo $the_ppoint_url ?>" target="_blank">Click Here to Download</a>
 					</div>
 				</div>
@@ -117,13 +113,14 @@
 			<article class="item video">
 			
 				<a href="#video"><i class="icon-video"></i>Video</a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
 		
 				<div id="video" class="modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
 						<h2>Video</h2>
-						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" width="940" height="560" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" style="width:80vw; height:70vh;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<a href="https://vimeo.com/<?php echo $the_videoid ?>" target="_blank">Click Here to View on Vimeo</a>
+
 					</div>
 				</div>
 				
@@ -133,8 +130,7 @@
 	<!-- More Info -->	
 		<?php  if( $more_info ){  ?>
 			<article class="item more">
-				<a href="#more"><i class="icon-more-info"></i>More Info</a>
-		<!-- <img src="<?php echo get_stylesheet_directory_uri();?>/images/icon-paper.svg" alt="black paper icon"> -->
+				<a href="#more"><i class="icon-more"></i>More Info</a>
 		
 				<div id="more" class="modalDialog">
 					<div>
