@@ -33,7 +33,7 @@ get_header(); ?>
 				<div class="selectorContainer">
 					<div class="searchDivider"></div>
 				<div class="searchSelector clearfix">
-					<a href="#" class="selected simpleS">Simple Search</a><a href="#" class="advancedS">Advanced Search</a>
+					<a href="#" class="selected simpleS">Simple Search</a><!-- <a href="#" class="advancedS">Advanced Search</a> -->
 				</div>
 				</div>
 			
@@ -239,7 +239,7 @@ get_header(); ?>
 <input id="wcmc_s" class="field" type="text" placeholder="General Search" name="wcmc_s">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-			$(function(){			
+			$(function(){		
 		
 		$(".simpleS").click(function(e) {
 			e.preventDefault();
@@ -249,6 +249,7 @@ get_header(); ?>
 			
 			$(this).addClass("selected");
 			$(".advancedS").removeClass("selected");
+
 		});
 		
 		$(".advancedS").click(function(e) {
