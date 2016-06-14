@@ -61,17 +61,16 @@
 //logit($the_paper,'$the_paper: ');
  ?>
 
+<!-- if there's any media, display Media section & Title -->	
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
 		
 	<section class="wcmc-media">
-
-	<!-- if there's any media, display title -->	
-		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
-			<h6>Project Media</h6>	
+		<h6>Project Media</h6>	
 			
 		<?php }; ?>
-		
-		
-	<!-- Paper -->
+			
+			
+<!-- Paper -->
 		<?php  if( $the_paper_url ){  ?>
 			<article class="item">
 			
@@ -90,7 +89,7 @@
 		<?php }; ?>
 
 
-	<!-- Powerpoint -->		
+<!-- Powerpoint -->		
 		<?php  if( $the_ppoint_url ){  ?>
 			<article class="item">
 			
@@ -108,7 +107,8 @@
 			</article>
 		<?php }; ?>
 
-	<!-- Video Embed -->		
+
+<!-- Video Embed -->		
 		<?php  if( $the_videoid ){  ?>
 			<article class="item video">
 			
@@ -127,7 +127,8 @@
 			</article>
 		<?php }; ?>
 	
-	<!-- More Info -->	
+	
+<!-- More Info -->	
 		<?php  if( $more_info ){  ?>
 			<article class="item more">
 				<a href="#more"><i class="icon-more"></i>More Info</a>
@@ -143,7 +144,13 @@
 			</article>
 		<?php }; ?>
 		
+		
+<!-- if there's any media, close Media section tag -->	
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
+		
 	</section><!-- wcmc-media -->
+	
+		<?php }; ?>
 
 
 		<?php if ( 'post' == get_post_type() ) : ?>
