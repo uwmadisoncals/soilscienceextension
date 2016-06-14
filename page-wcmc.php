@@ -326,9 +326,19 @@ if ( $wcmcfull_query->have_posts() ) { ?>
 		<li>
 		<div class="wcmc_shown">
 
+		<div class="title_wrapper">
 			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-			<div class="author"><div class="label">Authors</div>
+			<div class="date"><!--<div class="label">Year</div>-->
+			<?php $myStr = get_field('date'); 
+				$result = substr($myStr, 0, 4);
+				echo $result;
+			 ?>
+			</div>
+
+		</div>
+
+			<div class="author"><span class="label">Authors:&nbsp;</span>
 			<?php
 				//display author names from repeater fields
 				if(have_rows('authors')){
@@ -361,13 +371,10 @@ if ( $wcmcfull_query->have_posts() ) { ?>
 			
 			 ?></div>
 
+			 <div class="excerpt"><?php if( the_excerpt() ){ the_excerpt(); } ?></div>
 
-			<div class="date"><div class="label">Year</div>
-			<?php $myStr = get_field('date'); 
-				$result = substr($myStr, 0, 4);
-				echo $result;
-			 ?>
-			</div>
+
+
 			
 			
 		</div>

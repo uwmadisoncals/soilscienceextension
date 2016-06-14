@@ -60,6 +60,14 @@
 			letter-spacing: 1px;
 			font-size: 10px;
 		}
+
+        div.wcmc_shown{
+            div.title_wrapper{
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+            }
+        }
 	}
 }
 
