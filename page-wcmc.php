@@ -325,20 +325,50 @@ if ( $wcmcfull_query->have_posts() ) { ?>
 		
 		<li>
 		<div class="wcmc_shown">
+
 			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-			<div class="author"><div class="label">Author</div> <?php the_field('author_name1'); ?></div>
-			<?php if(get_field('author_name2')) { ?>
-			<div class="author"><div class="label">Author</div> <?php the_field('author_name2'); ?></div>
-			<?php } ?>
-			<?php if(get_field('third_author')) { ?>
-			<div class="author"><div class="label">Author</div> <?php the_field('third_author'); ?></div>
-			<?php } ?>
+
+			<div class="author"><div class="label">Authors</div>
+			<?php
+				//display author names from repeater fields
+				if(have_rows('authors')){
+
+					//get repeater data as an array
+					$gfa = get_field('authors');
+
+					//get count of items in $gfa
+					$count_gfa = count($gfa);
+
+					//init. loop counter
+					$i = 0;
+
+					while(have_rows('authors')){
+
+						the_row();
+
+						if( ($count_gfa-1) == $i ){
+							echo get_sub_field('name'); //if last item don't print comma
+						}else{
+							echo get_sub_field('name') . ", ";// print comma delimiter
+						}
+
+						$i++;
+					}
+
+				}else{
+					echo "error: have_rows('authors') == False";
+				}
+			
+			 ?></div>
+
+
 			<div class="date"><div class="label">Year</div>
 			<?php $myStr = get_field('date'); 
 				$result = substr($myStr, 0, 4);
 				echo $result;
 			 ?>
 			</div>
+			
 			
 		</div>
 		
