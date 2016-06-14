@@ -165,6 +165,25 @@ div#autoc ul li{
 
 /* WCMC Post Stylings */
 
+/* WCMC Proceedings Page */
+
+.wcmc-proc-list {
+    display:flex;
+    flex-flow: row wrap;
+    margin:0;
+}
+.wcmc-proc-list li {
+    flex: 1 0 auto;
+    padding:.5em 1em;
+    list-style-type:none;
+    text-align:center;
+}
+.wcmc-proc-title {
+ 	text-align:center;
+    font-weight:bold;
+}
+
+
 /* Project Info */
 .wcmc-list {
 	margin:0;
@@ -366,3 +385,5 @@ div#autoc ul li{
 .icon-paper {
 	font-size:1.2em;
 }
+
+.s1 { display:none; } /* there's a small space before every post's content. shrug. */
