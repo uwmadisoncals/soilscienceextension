@@ -81,6 +81,14 @@ University of Wisconsin Foundation.</p>
 		</script> -->
 
 <!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>-->
-
+										<div id='paper' class='modalDialog'>
+											<div>
+												<a href='#close' title='Close' class='close'>X</a>
+												<h2>Paper</h2>
+												<iframe src='' style='width:80vw; height:70vh;' frameborder='0'></iframe>
+												<a href='#' target='_blank' class='download'>Click Here to Download</a>
+											</div>
+						
+										</div>
 </body>
 </html>

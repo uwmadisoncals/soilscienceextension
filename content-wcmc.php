@@ -74,16 +74,24 @@
 		<?php  if( $the_paper_url ){  ?>
 			<article class="item">
 			
-				<a href="#paper"><i class="icon-paper"></i>Paper</a>
+				<a href="#paper" class="paperLink" data-paperurl="<?php echo $the_paper_url ?>" data-paperiframeurl="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true"><i class="icon-paper"></i>Paper</a>
 		
-				<div id="paper" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>Paper</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true" style="width:80vw; height:70vh;" frameborder="0"></iframe>
-						<a href="<?php echo $the_paper_url ?>" target="_blank">Click Here to Download</a>
-					</div>
-				</div>
+				<script>
+					
+					$(".item .paperLink").click(function(evt) {
+						evt.preventDefault();
+						
+						var paperurl = $(this).attr('data-paperurl');
+						var paperiframeurl = $(this).attr('data-paperiframeurl');
+						
+						$("#paper").find("iframe").attr("src",paperiframeurl);
+						$("#paper").find("a.download").attr("href",paperurl);
+						
+					});
+					
+				</script>
+		
+				
 
 			</article>
 		<?php }; ?>
