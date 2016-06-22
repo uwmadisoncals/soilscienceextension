@@ -81,14 +81,14 @@ University of Wisconsin Foundation.</p>
 		</script> -->
 
 <!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/snowfeature.js"></script>-->
-										<div id='paper' class='modalDialog'>
-											<div>
-												<a href='#close' title='Close' class='close'>X</a>
-												<h2>Paper</h2>
-												<iframe src='' style='width:80vw; height:70vh;' frameborder='0'></iframe>
-												<a href='#' target='_blank' class='download'>Click Here to Download</a>
-											</div>
-						
-										</div>
+		<div id='modal' class='modalDialog'>
+			<div id='test'>
+				<a href='#close' title='Close' id='xButton' class="close">X</a>
+				<h2>Project Media</h2>
+				<iframe src="" style='width:80vw; height:70vh;' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<a href="#" target='_blank' class='download'>Click Here to View More/Download</a>
+			</div>
+		</div>
+		<!-- backdrop to click, attempt <div id='backdrop' class='close'></div> -->
 </body>
 </html>

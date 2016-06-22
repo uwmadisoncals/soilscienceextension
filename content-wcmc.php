@@ -61,12 +61,41 @@
 //logit($the_paper,'$the_paper: ');
  ?>
 
-<!-- if there's any media, display Media section & Title -->	
-		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
+<!-- if any media, display section & title, AND run script -->	
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid ){ ?>
 		
 	<section class="wcmc-media">
 		<h6>Project Media</h6>	
+
+		<script>
+		jQuery(document).ready(function($){
+			$("#backdrop").hide();
 			
+			$(".item .mediaLink").click(function(evt) {
+				evt.preventDefault();
+				
+				var mediaurl = $(this).attr('data-mediaurl');
+				var mediaiframeurl = $(this).attr('data-mediaiframeurl');
+				
+				$("#modal").find("iframe").attr("src",mediaiframeurl);
+				$("#modal").find("a.download").attr("href",mediaurl);
+				$("#modal").animate({opacity: '1'},"300").css("pointer-events", "auto");
+				$("#backdrop").show();
+			});
+			
+			$(".close").click(function(cls) {
+				cls.preventDefault();
+				
+				$("#modal").animate({opacity: '0'},"300").css("pointer-events", "none");
+				$("#backdrop").hide();
+			
+			});
+			
+			
+		});		
+			
+		</script>
+					
 		<?php }; ?>
 			
 			
@@ -74,25 +103,8 @@
 		<?php  if( $the_paper_url ){  ?>
 			<article class="item">
 			
-				<a href="#paper" class="paperLink" data-paperurl="<?php echo $the_paper_url ?>" data-paperiframeurl="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true"><i class="icon-paper"></i>Paper</a>
+				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_paper_url ?>" data-mediaiframeurl="http://docs.google.com/gview?url=<?php echo $the_paper_url ?>&embedded=true"><i class="icon-paper"></i>Paper</a>
 		
-				<script>
-					
-					$(".item .paperLink").click(function(evt) {
-						evt.preventDefault();
-						
-						var paperurl = $(this).attr('data-paperurl');
-						var paperiframeurl = $(this).attr('data-paperiframeurl');
-						
-						$("#paper").find("iframe").attr("src",paperiframeurl);
-						$("#paper").find("a.download").attr("href",paperurl);
-						
-					});
-					
-				</script>
-		
-				
-
 			</article>
 		<?php }; ?>
 
@@ -101,17 +113,8 @@
 		<?php  if( $the_ppoint_url ){  ?>
 			<article class="item">
 			
-				<a href="#powerpoint"><i class="icon-pres"></i>Presentation</a>
-		
-				<div id="powerpoint" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>Powerpoint</h2>
-						<iframe src="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true" style="width:80vw; height:70vh;" frameborder="0"></iframe>
-						<a href="<?php echo $the_ppoint_url ?>" target="_blank">Click Here to Download</a>
-					</div>
-				</div>
-				
+				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_ppoint_url ?>" data-mediaiframeurl="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true"><i class="icon-pres"></i>Presentation</a>
+						
 			</article>
 		<?php }; ?>
 
@@ -120,41 +123,14 @@
 		<?php  if( $the_videoid ){  ?>
 			<article class="item video">
 			
-				<a href="#video"><i class="icon-video"></i>Video</a>
-		
-				<div id="video" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>Video</h2>
-						<iframe src="https://player.vimeo.com/video/<?php echo $the_videoid ?>" style="width:80vw; height:70vh;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-						<a href="https://vimeo.com/<?php echo $the_videoid ?>" target="_blank">Click Here to View on Vimeo</a>
-
-					</div>
-				</div>
-				
-			</article>
-		<?php }; ?>
-	
-	
-<!-- More Info -->	
-		<?php  if( $more_info ){  ?>
-			<article class="item more">
-				<a href="#more"><i class="icon-more"></i>More Info</a>
-		
-				<div id="more" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>More Info</h2>
-						<p><?php echo $more_info ?></p>
-					</div>
-				</div>
-
+				<a href="#" class="mediaLink" data-mediaurl="https://vimeo.com/<?php echo $the_videoid ?>" data-mediaiframeurl="https://player.vimeo.com/video/<?php echo $the_videoid ?>"><i class="icon-video"></i>Video</a>
+					
 			</article>
 		<?php }; ?>
 		
 		
 <!-- if there's any media, close Media section tag -->	
-		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $more_info ){ ?>
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid ){ ?>
 		
 	</section><!-- wcmc-media -->
 	
