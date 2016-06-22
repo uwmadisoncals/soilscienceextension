@@ -79,21 +79,20 @@
 				
 				$("#modal").find("iframe").attr("src",mediaiframeurl);
 				$("#modal").find("a.download").attr("href",mediaurl);
-				$("#modal").animate({opacity: '1'},"300").css("pointer-events", "auto");
+				$("#modal").animate({opacity: '1'},"200").css("pointer-events", "auto");
 				$("#backdrop").show();
 			});
 			
 			$(".close").click(function(cls) {
 				cls.preventDefault();
 				
-				$("#modal").animate({opacity: '0'},"300").css("pointer-events", "none");
 				$("#backdrop").hide();
-			
+				$("#modal").animate({opacity: '0'},"100").css("pointer-events", "none");
+				$("#modal").find("iframe").removeAttr("src");
+				$("#modal").find("a.download").removeAttr("href");
 			});
 			
-			
-		});		
-			
+		});
 		</script>
 					
 		<?php }; ?>

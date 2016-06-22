@@ -271,9 +271,9 @@ div#autoc ul li{
 }
 
 .modalDialog > div {
-	width: 80vw;
+	width: 75vw;
 	position: relative;
-	margin: 5% auto;
+	margin: 4vw auto;
 	padding: 1em;
 	border-radius: 10px;
 	background: #fff;
