@@ -85,7 +85,7 @@ University of Wisconsin Foundation.</p>
 			<div id='test'>
 				<a href='#close' title='Close' id='xButton' class="close">X</a>
 				<h2>Project Media</h2>
-				<iframe src="" style='width:80vw; height:70vh;' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<iframe src="" style='width:80vw; height:70vh;' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no" ></iframe>
 				<a href="#" target='_blank' class='download'>View More/Download</a>
 			</div>
 		</div>

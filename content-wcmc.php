@@ -14,8 +14,16 @@
 	      $the_ppoint = get_field('presentation');
 	      	$the_ppoint_url = $the_ppoint['url'];
 	      	$the_ppoint_title = $the_ppoint['title'];
+	      	//Vimeo ID
 	      $the_videoid = get_field('video_id');
-	      $more_info = get_field('more');
+
+			//WPT Recording URL
+	      $the_recording_URL = get_field('recording_URL');
+			//WPT Recording iFrame
+	      $the_recording_iframe = get_field('recording_iframe');
+	      	//Extract src of iFrame
+	      $the_recording_src = substr(htmlentities($the_recording_iframe),66,44);
+	      
 	 ?>
 
 
@@ -127,9 +135,19 @@
 			</article>
 		<?php }; ?>
 		
+
+<!-- Recording Embed -->		
+		<?php  if( $the_recording_URL ){  ?>
+			<article class="item recording">
+			
+				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_recording_URL ?>" data-mediaiframeurl="<?php echo $the_recording_src ?>"><i class="icon-video"></i>Recording</a>
+					
+			</article>
+		<?php }; ?>
+		
 		
 <!-- if there's any media, close Media section tag -->	
-		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid ){ ?>
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $the_recording_URL ){ ?>
 		
 	</section><!-- wcmc-media -->
 	
