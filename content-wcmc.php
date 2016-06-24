@@ -91,6 +91,13 @@
 				$("#backdrop").show();
 			});
 			
+			$('.close').hover(function() {
+				$('#backdrop').css('opacity', '.25');
+				}, function() {
+				// on mouseout, reset the backdrop
+				$('#backdrop').css('opacity', '.75');
+			});
+			
 			$(".close").click(function(cls) {
 				cls.preventDefault();
 				

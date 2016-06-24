@@ -261,7 +261,7 @@ div#autoc ul li{
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.2);
 	opacity:0;
 /*	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
@@ -270,7 +270,7 @@ div#autoc ul li{
 	z-index:9;
 }
 
-.modalDialog > div {
+.modalDialog > #box {
 	width: 75vw;
 	position: relative;
 	margin: 4vw auto;
@@ -280,7 +280,7 @@ div#autoc ul li{
 	background: -moz-linear-gradient(#ddd, #999);
 	background: -webkit-linear-gradient(#ddd, #999);
 	background: -o-linear-gradient(#ddd, #999);
-	z-index:10;
+	z-index:11;
 }
 #xButton {
 	background: #606061;
@@ -306,12 +306,15 @@ div#autoc ul li{
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index:11!important;
-	background-color:red;
-	opacity:0.5;
+	z-index:10!important;
+	background-color:#000;
+	opacity:.7;
+	transition:.8s;
 }
 #xButton:hover { background: #00d9ff; color:black; text-decoration:none;}
-
+#topBar {
+	display:none !important;
+}
 
 /* Project Media Icons */
 
