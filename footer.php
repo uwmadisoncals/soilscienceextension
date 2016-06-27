@@ -84,9 +84,8 @@ University of Wisconsin Foundation.</p>
 		<div id='modal' class='modalDialog'>
 			<div id='box'>
 				<a href='#close' title='Close' id='xButton' class="close">X</a>
-				<h2>Project Media</h2>
 				<iframe src="" style='width:80vw; height:70vh;' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no" seamless></iframe>
-				<a href="#" target='_blank' class='download'>View More/Download</a>
+				<a href="#" target='_blank' class='download' id='dButton'>View More / Download</a>
 			</div>
 			<div id="backdrop" class="close"></div>
 		</div>

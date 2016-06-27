@@ -127,7 +127,7 @@
 		<?php  if( $the_ppoint_url ){  ?>
 			<article class="item">
 			
-				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_ppoint_url ?>" data-mediaiframeurl="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true"><i class="icon-pres"></i>Presentation</a>
+				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_ppoint_url ?>" data-mediaiframeurl="http://docs.google.com/gview?url=<?php echo $the_ppoint_url ?>&embedded=true"><i class="icon-pres"></i>Powerpoint</a>
 						
 			</article>
 		<?php }; ?>
@@ -137,7 +137,7 @@
 		<?php  if( $the_videoid ){  ?>
 			<article class="item video">
 			
-				<a href="#" class="mediaLink" data-mediaurl="https://vimeo.com/<?php echo $the_videoid ?>" data-mediaiframeurl="https://player.vimeo.com/video/<?php echo $the_videoid ?>"><i class="icon-video"></i>Video</a>
+				<a href="#" class="mediaLink" data-mediaurl="https://vimeo.com/<?php echo $the_videoid ?>" data-mediaiframeurl="https://player.vimeo.com/video/<?php echo $the_videoid ?>"><i class="icon-video"></i>Screen Capture</a>
 					
 			</article>
 		<?php }; ?>
@@ -147,7 +147,7 @@
 		<?php  if( $the_recording_URL ){  ?>
 			<article class="item recording">
 			
-				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_recording_URL ?>" data-mediaiframeurl="<?php echo $the_recording_src ?>"><i class="icon-video"></i>Recording</a>
+				<a href="#" class="mediaLink" data-mediaurl="<?php echo $the_recording_URL ?>" data-mediaiframeurl="<?php echo $the_recording_src ?>"><i class="icon-video"></i>Video Recording</a>
 					
 			</article>
 		<?php }; ?>

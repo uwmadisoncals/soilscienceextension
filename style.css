@@ -230,7 +230,7 @@ div#autoc ul li{
 	padding:1em .2em .2em;
 	font-size:1.3em;
 	font-weight:100;
-	width:150px;
+	width:170px;
 }
 .wcmc-media h6 {
 	flex: 0 0 100%;
@@ -249,8 +249,8 @@ div#autoc ul li{
 	transition:.1s;
 	font-weight:bold;
 }
-#content {
-	z-index:auto!important;
+.wcmc-media .video, .wcmc-media .recording {
+	letter-spacing:0px;
 }
 /* Project Media Modal */
 
@@ -274,31 +274,39 @@ div#autoc ul li{
 	width: 75vw;
 	position: relative;
 	margin: 4vw auto;
-	padding: 1em;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#ddd, #999);
-	background: -webkit-linear-gradient(#ddd, #999);
-	background: -o-linear-gradient(#ddd, #999);
+	padding: .5em .5em 0;
+	border-radius: 4px;
+	background: #ececec;
+	background: -moz-linear-gradient(#ececec, #ddd);
+	background: -webkit-linear-gradient(#ececec, #ddd);
+	background: -o-linear-gradient(#ececec, #ddd);
 	z-index:11;
 }
-#xButton {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
+#xButton, #dButton {
+	background: #ddd;
 	position: absolute;
-	right: -12px;
 	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
+	
+}
+#xButton {
+	color: black;
+	line-height: 25px;
+	top:-14px;
+	right: -12px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+}
+#dButton {
+	top:-14px;
+	left:-36px;
+	padding:3px 10px;
 }
 #backdrop {
 	position:fixed;
@@ -311,7 +319,8 @@ div#autoc ul li{
 	opacity:.7;
 	transition:.8s;
 }
-#xButton:hover { background: #00d9ff; color:black; text-decoration:none;}
+#dButton:hover { background:#bbb; color:#b70101;}
+#xButton:hover { background: #bbb; color:#b70101; text-decoration:none;}
 #topBar {
 	display:none !important;
 }
@@ -372,14 +381,13 @@ div#autoc ul li{
   -moz-osx-font-smoothing: grayscale;
  
   /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+   text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.5); 
 }
  
 .icon-pres:before { content: '\e801'; } /* '' */
 .icon-paper:before { content: '\e804'; 
 	width:.78em;} /* '' */
-.icon-video:before { content: '\e805'; 
-	width:1.1em;} /* '' */
+.icon-video:before { content: '\e805'; } /* '' */
 .icon-more:before { content: '\e806'; } /* '' */
 
 .icon-paper {
