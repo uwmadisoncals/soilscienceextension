@@ -162,7 +162,7 @@ $current_colorscheme = $options['link_color'];
 	<div class="blurredBodyCopy" aria-hidden="true">
 		<div class="top">
 			
-			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
+			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 10 );
 					$loop = new WP_Query( $args );
 					$loopcount = 0;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -358,7 +358,7 @@ $pages = get_pages();
 
 			<?php //comments_template( '', true ); ?>
 			
-			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 1 );
+			<?php $args = array( 'post_type' => 'headerslides', 'posts_per_page' => 10 );
 			$loop = new WP_Query( $args );
 			$loopcount = 0;
 			while ( $loop->have_posts() ) : $loop->the_post(); 
