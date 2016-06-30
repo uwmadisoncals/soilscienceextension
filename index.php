@@ -408,15 +408,14 @@ $argsNews = array(
 	'category_name'=>'news',
 	'orderby'=>'date',
 	'order'=>'DESC',
-	'date_query'=>array(
+/*	'date_query'=>array(
 		array(
 			'after'=>$threeMoAgo
 			)
-		),
+		),*/
 	);
 
 	$newsQuery = new WP_Query($argsNews);
-
 ?>
 
 	<?php
