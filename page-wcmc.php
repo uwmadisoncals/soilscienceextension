@@ -309,7 +309,7 @@ get_header(); ?>
 				
 				<?php $args = array(
 									'post_type' => array( 'wcmc' ),
-									'posts_per_page' => 500,
+									'posts_per_page' => 5000,
 									'meta_key' => 'date',
 									'orderby' => 'meta_value_num',
 									'order' => 'DESC'
