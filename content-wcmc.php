@@ -74,18 +74,6 @@
 		
 	<section class="wcmc-media">
 		<h6>Project Media</h6>
-		<style type="text/css">
-		/* Safari 6.1+ (9.0 is the latest version of Safari at this time) 
-		 * For Safari, add 1em extra of padding to the bottom.
-		 */
-		@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-			@media {
-				.wcmc-media h6 { 
-					padding-bottom:1.3em;
-				}
-			}
-		}
-		</style>
 
 		<script>
 		jQuery(document).ready(function($){

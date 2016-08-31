@@ -12,6 +12,7 @@ Version:        0.1.0
 @import url("../calsmain2013/mobile.css");
 @import url("master-child.css");
 
+
 /*html.csstransforms body#calsblack.home div.mobileScroll div#page.hfeed header#branding div.headerCentered hgroup.heading img#logoExt {
     left: 120px;
     position: relative;
@@ -252,6 +253,19 @@ div#autoc ul li{
 .wcmc-media .video, .wcmc-media .recording {
 	letter-spacing:0px;
 }
+
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) 
+ * For Safari, add 1em extra of padding to the bottom.
+ */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.wcmc-media h6 { 
+			padding-bottom:1.3em;
+		}
+	}
+}
+
+
 /* Project Media Modal */
 
 .modalDialog {
