@@ -70,10 +70,22 @@
  ?>
 
 <!-- if any media, display section & title, AND run script -->	
-		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid ){ ?>
+		<?php if( $the_paper_url || $the_ppoint_url || $the_videoid || $the_recording_URL ){ ?>
 		
 	<section class="wcmc-media">
-		<h6>Project Media</h6>	
+		<h6>Project Media</h6>
+		<style type="text/css">
+		/* Safari 6.1+ (9.0 is the latest version of Safari at this time) 
+		 * For Safari, add 1em extra of padding to the bottom.
+		 */
+		@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+			@media {
+				.wcmc-media h6 { 
+					padding-bottom:1.3em;
+				}
+			}
+		}
+		</style>
 
 		<script>
 		jQuery(document).ready(function($){
@@ -90,7 +102,7 @@
 				$("#modal").animate({opacity: '1'},"200").css("pointer-events", "auto");
 				$("#backdrop").show();
 			});
-			
+				
 			$('.close').hover(function() {
 				$('#backdrop').css('opacity', '.25');
 				}, function() {
