@@ -254,12 +254,12 @@ div#autoc ul li{
 	letter-spacing:0px;
 }
 
-/* Safari 6.1+ (9.0 is the latest version of Safari at this time) 
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time)
  * For Safari, add 1em extra of padding to the bottom.
  */
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
 	@media {
-		.wcmc-media h6 { 
+		.wcmc-media h6 {
 			padding-bottom:1.3em;
 		}
 	}
@@ -306,7 +306,7 @@ div#autoc ul li{
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
-	
+
 }
 #xButton {
 	color: black;
@@ -362,44 +362,44 @@ div#autoc ul li{
   }
 }
 */
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "wcmc-media-icons";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .3em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
- 
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+
   /* Uncomment for 3D effect */
-   text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.5); 
+   text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.5);
 }
- 
+
 .icon-pres:before { content: '\e801'; } /* '' */
-.icon-paper:before { content: '\e804'; 
+.icon-paper:before { content: '\e804';
 	width:.78em;} /* '' */
 .icon-video:before { content: '\e805'; } /* '' */
 .icon-more:before { content: '\e806'; } /* '' */
@@ -409,3 +409,10 @@ div#autoc ul li{
 }
 
 .s1 { display:none; } /* there's a small space before every post's content. shrug. */
+
+/* remove filter for firefox */
+@-moz-document url-prefix() {
+	.collegeFeature .slideImage {
+		filter: none;
+	}
+}
